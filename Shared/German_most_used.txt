@@ -1,0 +1,1514 @@
+org.leo.dictionary.config.entity.ParseWords:de:en; uk:die+; das+; der+:%5C%7C:%3B:%3B:%5Ct::German+most+used
+
+	General 
+
+ab | from | з
+ab und zu | now and again | час від часу
+der Abend | evening | вечір
+als | when | коли
+wenn | when | коли
+bald | soon | незабаром
+bis bald | see you soon | до побачення!
+bevor | before | перед
+damals | then (= at that time) | тоді
+dann | then (= at that time) | тоді
+Endlich | finally | нарешті
+Zuletzt | at last | нарешті
+erst | not until | не раніше
+früh – early | рано
+gestern | yesterday | вчора
+gewöhnlich | usually | зазвичай
+heute | today | сьогодні
+immer | always | завжди 
+manchmal | sometimes | іноді
+der Mittag | midday | полудень
+die Mitte | middle | середина
+die Mitternacht | midnight | північ
+der Monat | month | місяць
+morgen | tomorrow | завтра
+der Morgen | morning | ранок
+nachdem | after | після
+nachher | afterwards | пізніше
+der Nachmittag | afternoon | після обіду
+nächst | next | наступний
+neulich | recently | недавно
+nicht mehr | no longer | вже не
+nie | never | ніколи
+noch | still | все ще
+noch nicht | not yet | ще не
+plötzlich | suddenly | раптово
+schon | already | вже
+sobald | as soon as | як тільки
+sofort | immediately | негайно
+täglich | daily | щоденно
+übermorgen | day after tomorrow | післязавтра
+vorgestern | day before yesterday | позавчора
+vorher | previously | перед цим
+der Vormittag | morning | ранок, до обіду
+zuerst | at first | спочатку
+aber | but | але
+alle | all; everyone | всі
+allein | alone | сам
+also | so | отже
+andere | other | інший
+anderthalb | one and a half | півтора
+anfangen | to begin | починати
+die Antwort | answer | відповідь
+antworten | to answer | відповідати
+die Art | sort | вид
+auch | also | також
+Auf Wiedersehen | goodbye! | до побачення!
+der Augenblick | moment | момент
+ausgezeichnet | excellent | відмінний
+außer | except for | окрім
+befriedigend | satisfactory | задовільний
+beginnen | to begin | починати
+begrüßen | to greet | привітати
+behalten | to keep | тримати
+behandeln | to treat | лікувати
+die Behandlung | treatment | лікування
+beide | both | обидва
+das Beispiel | example | приклад
+bekommen | to receive | отримувати
+beliebt | popular | популярний
+bemerken | to notice | помічати
+benutzen | to use | використовувати
+bequem | comfortable | зручний
+besitzen | to own | володіти
+besonders | particularly | особливо
+besser | better | краще
+besprechen | to discuss | обговорювати
+bestimmt | definitely | безперечно
+bestrafen | to punish | покарати
+besuchen | to visit | відвідувати
+bieten | to offer | пропонувати
+billig | cheap | дешевий
+bisschen | a little | трошки
+bitte | please | будь ласка
+brauchen | to need | потребувати
+brechen | to break | ламати
+breit | wide | широкий
+bringen | to bring | приносити
+d.h. | i.e. | тобто
+danke | thank you | дякую
+dass | that | що
+das Datum | date | дата
+dauern | to last | тривати
+denken | to think | думати
+dies | this | це
+das Ding | thing | річ
+doch | yes (contradicting) | так (проте)
+drücken | to press; push | натискати; натиск
+dürfen | to be allowed to; may | мати дозвіл
+das Dutzend | a dozen – дюжина
+eben | just | тільки
+ebenso | just as | так само
+egal | I don’t care! | байдуже
+ehemalig | former | колишній
+eigen | own | власний
+eilen | to hurry | поспішати
+einander | one another | один одному
+einige | a few | кілька
+einmal | once | один раз
+einverstanden | agreed | погоджено
+das Ende | end | кінець
+eng | narrow | вузький
+entfernt | distant | далекий
+entschuldigen Sie! | excuse me! | вибачте!
+erinnern | to remind | нагадувати
+erkennen | to recognise | впізнавати
+erzählen | to tell | розповідати
+es gibt | there is; are | є
+es macht nichts | it doesn't matter | нічого страшного
+etwa | approximately | приблизно
+ungefähr | approximately | приблизно
+etwas | something | щось
+fallen | to fall | падати
+falsch | wrong | неправильно
+fast | almost | майже
+fehlen | to be missing | відсутній
+der Fehler | mistake | помилка
+fertig | ready | готовий
+finden | to find | знаходити
+folgen | to follow | слідувати
+die Frage | question | питання
+fragen | to ask | запитувати
+gar nicht | not at all | зовсім не
+geben | to give | давати
+genau | exactly | точно
+genug | enough | достатньо
+gern | gladly | з радістю
+geschlossen | closed | закритий
+getrennt | separately | окремий
+glauben | to think; believe | вважати; вірити
+gleich | immediately | негайно
+glücklich | happy | щасливий
+der Gott | God | Бог
+gratulieren | to congratulate | вітати
+der Grund | reason | причина
+der Gruß | greeting | привітання
+günstig | favourable | вигідний
+gut | good | добре
+der guten Tag | hello | добрий день
+haben | to have | мати
+halb | half | половина
+die Hälfte | a half | половина
+halten | to hold | тримати
+hier | here | тут
+hochachtungsvoll | yours faithfully | із повагою
+hoffen | to hope | сподіватися
+die Idee | idea | ідея
+in Ordnung | O.K.! | в порядку!
+klar! | O.K.! | в порядку!
+inbegriffen | included | включено
+irgendwo | somewhere (or other) | десь
+ja | yes | так
+je | each (=per item) | кожен; штука
+das Stück | each (=per item) | кожен; штука
+jeder | each; every; everybody | кожен
+jemand | someone; somebody | хтось
+jener | that | той
+jetzt | now | зараз
+kaputt | broken | зламаний
+kein | no (= not any) | немає
+klar | clear | ясно
+können | to can | могти
+kriegen | to get | отримувати
+lang | long | довгий
+langsam | slow | повільно
+lassen | to let; leave | залишати
+leider | unfortunately | на жаль
+leid tun | to feel sorry for | шкода
+leihen | to lend | позичати
+letzt | last | останній
+machen | to make | робити
+mäßig | moderate | помірний
+mehr | more | більше
+mehrere | several | кілька
+die Meinung | opinion | думка
+mit freundlichen Grüßen | yours sincerely | з повагою
+mögen | to like | подобатися
+möglich | possible | можливий
+müssen | to have to | мусити
+natürlich | of course | звісно
+nehmen | to take | брати
+nein | no | ні
+neu | new | новий
+nicht | not | не
+nichts | nothing | ніщо
+niemand | nobody | ніхто
+die Nummer | number | номер
+nur | only | тільки
+oder | or | або
+offen | open | відкритий
+öffnen | to open | відкривати
+oft | often | часто
+ohne | without | без
+das Paar | a couple | пара
+ein paar | a few – кілька
+
+
+	Life in the home; friends and relationships 
+
+begießen | to water (plants) | поливати
+beißen | to bite | кусати
+bewundern | to admire | захоплюватися
+die Beziehung | relationship | стосунки
+die Braut | bride | наречена
+der Dachboden | attic | горище
+echt | genuine | справжній
+die Ehe | marriage | шлюб
+die Eigenschaft | characteristic | властивість
+der Eindruck | impression | враження
+erscheinen | to appear | з'являтися
+der Fensterladen | shutter | жалюзі
+die Fernbedienung | remote control | пульт
+die Freundschaft | friendship | дружба
+die Gebrauchsanweisung | instructions for use | інструкція
+das Gedächtnis | memory | пам'ять
+die Gefahr | danger | небезпека
+geschieden | divorced | розлучений
+das Geschlecht | gender | стать
+getrennt | separated | розділений
+das Gewicht | weight | вага
+der Griff | handle | ручка
+gütig | kind | лагідний
+heizen | to heat | гріти
+die Hütte | hut | хижа
+das Jahrhundert | century | століття
+das Kabel | cable | кабель
+der Käfig | cage | клітка
+der Kamin | fireplace | камін
+die Klimaanlage | air | conditioning | кондиціонер
+klopfen | to knock | стукати
+der König | king | король
+die Königin | queen | королева
+die Kontaktlinsen | contact lenses | контактні лінзи
+der Krug | jug | кувшин
+lächeln | to smile | посміхатися
+lächerlich | ridiculous | смішний
+die Lage | situation | ситуація
+der Lärm | noise | шум
+lebhaft | lively | жвавий
+nennen | to name | називати
+neugierig | curious | допитливий
+die Persönlichkeit | personality | особистість
+die Puppe | doll | лялька
+der Quadratmeter | square metre | квадратний метр
+der Rasierapparat | shaver | бритва
+sich rasieren | to shave | бритися
+reißen | to tear | рвати
+der Reißverschluss | zip | блискавка
+der Rowdy | hooligan | хуліган
+rücksichtslos | careless | безпечний
+sanft | gentle | ніжний
+das Schloss | lock | замок
+schminken | to put on make | up | накладати макіяж
+der Schmuck | jewellery | прикраси
+die Schublade | drawer | ящик
+der Schuppen | shed | сарай
+der Schwager | brother | in | law | шурин
+schwanger | pregnant | вагітна
+die Schwiegermutter | mother | in | law | теща
+der Schwiegervater | father | in | law | тесть
+sehr geehrte(r) Herr / Frau | dear Sir / Madam | шановний пан / пані
+selbständig | independently | самостійно
+seltsam | strange | дивний
+die Senioren | senior citizens | пенсіонери
+die Spülküche | utility room | прачечна; кухня
+die Stiefmutter | stepmother | мачуха
+der Stiefvater | stepfather | пасинок
+die Streichhölzer | matches | сірники
+der Streit | quarrel | сварка
+stumm | silent | безмовний
+sympathisch | nice | приємний
+die Tastatur | keyboard | клавіатура
+taub | deaf | глухий
+der Teppichboden | fitted carpet | килимове покриття
+der Traum | dream | мрія
+träumen | to dream | мріяти
+die Verantwortung | responsibility | відповідальність
+das Vergnügen | pleasure | задоволення
+vergrößern | to enlarge | збільшувати
+vernünftig | reasonable | розумний
+verrückt | mad | божевільний
+das Vertrauen | trust | довіра
+der Waschlappen | flannel | мочалка
+weinen | to cry | плакати
+das Werkzeug | implement | інструмент
+der Wintergarten | conservatory | зимовий сад
+winzig | tiny | крихітний
+die Witwe | widow | вдова
+der Witwer | widower | вдівець
+zornig | angry | сердитий
+der Zufall | by chance | випадок
+zunehmen | to put on weight | набирати вагу
+
+	Local area, facilities and getting around 
+
+der Acker | field | поле
+die Allee | avenue | алея
+der Bach | stream | струмок
+bauen | to build | будувати
+der Bauer | farmer | фермер
+der Bauernhof | farm | ферма
+der Baum | tree | дерево
+der Berg | mountain | гора
+das Blatt | piece of paper | аркуш паперу
+der Boden | ground | ґрунт
+die Bundesstraße | A | road | автодорога
+der Bürgersteig | pavement | тротуар
+die Bushaltestelle | bus stop | автобусна зупинка
+das Dach | roof | дах
+die Einbahnstraße | one way street | вулиця з однією стороною
+das Feld | field | поле
+flach | flat – плоский
+anbauen | to grow (crops) | вирощувати
+anschnallen (sich) | to fasten seat belt | пристебнутися
+außer Betrieb | out of order | не працює
+Autobahnkreuz | motorway junction | перехрестя автобанів
+Bahnübergang | level crossing | залізничний переїзд
+Baustelle | building site | будівництво; ремонт 
+befinden sich | to be situated | розташовуватись
+beilegen | to enclose | долучати
+Eimer | bucket | відро
+einwerfen | to post (a letter) | закидати (листа в поштову скриньку)
+entwerten | to cancel a ticket | анулювати квиток
+Fahrzeug | vehicle | транспортний засіб
+Fels | rock | скеля
+fließen | to flow | текти
+gebrauchen | to use | вживати
+Gegenteil | opposite | протилежний
+Gipfel | summit | вершина
+Hauptverkehrszeit | rush hour | година пік
+hupen | to hoot | сигналізувати
+Kennzeichen | registration number | реєстраційний номер
+Klippe | cliff | скеля
+Kofferraum | boot (of car) | багажник
+Kreis(verkehr) | circle (roundabout) | кільце
+Lenkrad | steering wheel | кермо
+liefern | to deliver | доставляти
+Luftdruck | tyre pressure | тиск у шинах
+öffentlich | public | публічний
+Reinigung | dry cleaning | сухе чищення
+Rückspiegel | rear | view mirror | заднє дзеркало
+Rundfunk | radio | радіо
+Sicherheit | safety | безпека
+Sicherheitsgurt | seatbelt | ремінь безпеки
+Stau | hold up; traffic jam | затор
+Steuer(rad) | steering wheel | кермо
+überfahren | to run over | збити
+überholen | to overtake | обігнати
+überqueren | to cross (road) | перетнути
+umgeben von | surrounded by | оточений чимось
+Umleitung | diversion | обхід
+Vorfahrt | priority; right of way | пріоритет
+wachsen | to grow | рости
+Weinberg | vineyard | виноградник
+Windschutzscheibe | windscreen | лобове скло
+Zebrastreifen | zebra | crossing | пішохідний перехід
+zusammenstoßen mit | to collide with | зіткнутися з
+
+	Sport, outdoor pursuits and healthy lifestyle 
+
+der Auge | eye | око
+der Bauch | tummy | живіт
+das Bein | leg | нога
+das Gesicht | face | обличчя
+die Haare | hair | волосся
+der Hals | neck; throat | шия; горло
+das Knie | knee | коліно
+der Körper | body | тіло
+der Mund | mouth | рот
+die Nase | nose | ніс
+das Ohr | ear | вухо
+die Schulter | shoulder | плече
+das Angeln | fishing | рибалка
+die Angelrute | fishing rod | вудка
+das Bad | bath | ванна
+das Baden | bathing | купання
+der Badeanzug | swimming suit | купальник 
+der Badeort | resort | курорт
+Bewegen | to move | рухатися
+das Endspiel | final game	 | фінал гри
+das Freibad | outdoor swimming pool | відкритий басейн
+der Fuß | foot | стопа
+der Fußball | football | футбол
+Gewinnen | to win | перемагати
+das Hallenbad | indoor swimming pool | закритий басейн
+das Joggen | jogging | біг
+das Kanufahren | canoeing | каное
+das Kegeln | skittles | кегельбан
+das Klettern | climbing | альпінізм
+das Laufen | running | біг
+die Leichtathletik | athletics | легка атлетика
+die Liga | league | ліга
+die Mannschaft | team | команда
+das Netz | net | мережа
+das Reiten | horse riding | верхова їзда
+das Rennen | race | гонка
+das Rollbrett | skateboard | скейтборд
+der Roller | scooter | самокат
+das Rollschuhlaufen | roller skating | ковзанярство
+das Ruderboot | rowing boat | човен
+das Rudern | rowing | гребля
+das Schießen | shooting | стрільба
+das Schlagen | hitting | удар
+der Schläger | racquet; stick; bat | ракетка; палиця; клюшка
+das Schließfach | locker | шафа
+das Schlittschuhlaufen | ice skating | катання на ковзанах
+das Schwimmbad | swimming pool | басейн
+das Schwimmen | swimming – плавання
+der See | lake | озеро 
+das Segeln | sailing | вітрильний спорт
+das Skifahren | skiing | лижний спорт
+der Skilehrer | ski instructor | інструктор з лиж
+die Skilehrerin | ski instructor | інструктор з лиж
+das Spazierengehen | going for a walk | прогулянка
+der Spaziergang | walk | прогулянка
+das Spiel | game | гра
+Spielen | to play | грати 
+der Spieler | player | гравець
+die Spielerin | player | гравець
+das Spielzeug | toy | іграшка
+Sport treiben | to do sport | займатися спортом
+der Sportplatz | sports ground – спортивний майданчик 
+Springen | to jump | стрибати
+das Stadion | stadium | стадіон
+Steigen | to climb | підніматися
+das Surfbrett | surfboard | серфінг
+der Umkleideraum | changing room | роздягальня
+der Verein | club | клуб
+Verlieren | to lose | програвати
+das Wandern | hiking | похід
+die Wanderung | hike | похід
+Werfen | to throw | кидати
+Windsurfen | to windsurf | віндсерфінг
+die Biene | bee | бджола
+die Erkältung | a cold | застуда
+das Fieber | fever | лихоманка
+die Fliege | fly | муха
+Fühlen | to feel | відчувати
+das Gefühl | feeling | почуття
+Gesund | healthy | здоровий
+die Grippe | flu | грип
+die Halsschmerzen | sore throat | біль у горлі
+das Hansaplast | sticking plaster | пластир
+das Heftpflaster | sticking plaster | пластир
+Helfen | to help | допомагати
+der Husten | cough | кашель
+Husten | to cough | кашляти
+die Kopfschmerzen | headache | головний біль
+Krank | ill | хворий
+das Krankenhaus | hospital | лікарня
+der Krankenpfleger | nurse (male/female) | медсестра/медбрат
+die Krankenschwester | nurse (male/female) | медсестра/медбрат
+der Krankenwagen | ambulance | швидка допомога
+der Magen | stomach | шлунок
+das Medikament | medicine | медикамент
+die Operation | operation | операція 
+der Patient | patient | пацієнт/пацієнтка
+die Patientin | patient | пацієнт/пацієнтка
+das Rezept | recipe | рецепт
+die Schmerzen | pain | біль
+der Schnupfen | cold | насморк
+Seekrank | seasick | морська хвороба
+Sprechen | to speak | говорити
+die Sprechstunde | surgery hours | прийом
+Stechen | to sting | жалити
+der Stich | sting | укус
+die Tablette | tablet; pill | таблетка
+der Unfall | accident | нещасний випадок
+Verletzen (sich) | to injure (o.s.) | поранити (себе)
+Weh tun | to hurt (e.g. my arm hurts) | болить (наприклад, болить моє плече)
+die Wespe | wasp | оса
+die Wunde | wound | рана
+der Zahn (Zahnschmerzen) | tooth (ache) | зуб (біль у зубі)
+der Zahnarzt | dentist | дантист
+die Zahnärztin | dentist | дантист
+die Zahnbürste | toothbrush | зубна щітка
+die Zahnpasta | toothpaste | зубна паста
+Höher | higher | вище
+der Anfänger | beginner | початківець
+die Anfängerin | beginner | початківець
+Bluten | to bleed | кровотеча
+die Blutprobe | blood test | кровний тест
+Brennen | to burn | палити
+die Brust | chest | груди
+der Chirurg | surgeon | хірург
+die Chirurgin | surgeon | хірург
+der Durchfall | diarrhoea | діарея
+der Ellbogen | elbow | лікоть
+Erbrechen (sich) | to be sick | блювати (себе)
+das Ereignis | event | подія
+der Erfolg | success | успіх
+das Ergebnis | result; score | результат; результат
+Erhalten | to receive | отримувати
+Erholen (sich) | to recover; get better | одужувати
+die Erleichterung | relief | полегшення
+Erreichen | to reach; catch | досягати; ловити
+die Erste Hilfe | first aid | перша допомога
+Fangen | to catch | ловити
+das Fußgelenk | ankle | щиколотка
+das Gehirn | brain | мозок
+der Geruch | smell | запах
+Geschwollen | swollen | набряклий
+der Gips(verband) | plaster | гіпс
+die Glatze | bald patch | лисина
+das Handgelenk | wrist | зап'ясток
+die Haut | skin | шкіра
+Heben | to lift; raise | піднімати
+das Heimweh | homesickness | туга за домом
+der Helm | helmet | каска
+der Heuschnupfen | hay fever | сінна лихоманка
+die Höhe | height | висота
+die Höhle | cave | печера
+der Hustensaft | cough mixture | кашель
+Jagen | to hunt | полювати
+das Kinn | chin | підборіддя
+der Knochen | bone | кістка
+Leiden | to suffer | страждати
+die Magenverstimmung | stomach upset | розлад шлунку
+der Meister | champion(ship) | чемпіон/чемпіонка
+die Meisterin | champion(ship) | чемпіон/чемпіонка
+die Menge | quantity (crowd) | кількість (толпа)
+Messen | to measure | вимірювати
+Nackt | naked | оголений
+der Pfeil | arrow | стріла
+Pflegen | to look after (patient) | доглядати (пацієнта)
+der Pokal | cup (trophy) | кубок
+das Röntgenbild | x | ray | рентгенівський знімок
+die Salbe | cream; ointment | мазь
+Schaden | to do harm | завдавати шкоду
+der Schaden | damage | шкода
+der Schiedsrichter | referee | суддя
+die Schiedsrichterin | referee | суддя
+Schlucken | to swallow | ковтати
+der Sieg | win; victory | перемога
+der Sonnenstich | sunstroke | удар сонцем
+die Sorge (sich Sorgen machen) | worry (to worry) | турбота (турбуватися)
+Sorgen für | to look after | дбати про
+die Spritze | injection | ін'єкція
+Tauchen | to dive | занурюватися
+Teilnehmen | to take part | брати участь
+das Turnier | tournament | турнір
+Übergeben (sich) | to be sick | блювати (себе)
+Unentschieden | undecided; drawn (match) | нічийний (матч)
+Untersuchen | to examine (patient) | обстежувати
+der Verband | bandage | бинт
+Verstauchen (sich) | to sprain | вивихнути (себе)
+Verstopft | constipated | закритий
+die Wange | cheek | щока
+der Wettbewerb | competition | конкурс
+der Wettkampf | competition | змагання
+der Zeh | toe | палець на нозі
+die Zunge | tongue – язик
+
+	Food and drink as aspects of culture and health 
+
+das Abendessen | dinner; evening meal | вечеря
+der Appetit (guten Appetit!) | appetite (enjoy your meal!) | апетит (смачного!)
+der Durst (durstig) | thirst(y) | спрага (спраглий)
+die Flamme | flame | полум'я
+die Flasche | bottle | пляшка
+Frisch | fresh | свіжий
+das Frühstück | breakfast | сніданок
+die Gabel | fork | виделка
+Gemischt | mixed | змішаний
+das Gericht | dish; course | страва
+das Getränk | drink | напій
+das Glas | glass | склянка
+Grillen | to grill/barbecue | смажити на грилі/барбекю
+die Imbiss(stube) | snack (bar) | закусочна
+das Kännchen | small pot | кувшиночка
+die Kantine | canteen | столова
+die Küche | kitchen | кухня
+Lecker | delicious | смачний
+der Löffel | spoon | ложка
+die Mahlzeit | meal | їжа
+das Messer | knife | ніж
+das Mittagessen | lunch | обід
+der Nachtisch | dessert | десерт
+Schmecken | to taste | смакувати
+Schnell | quick | швидкий
+der Schnellimbiss | fast food restaurant | швидка закусочна
+die Schüssel | bowl | миска
+die Selbstbedienung | self | service | самообслуговування
+die Speisekarte | menu | меню
+der Speisewagen | dining car | вагон | ресторан
+der Supermarkt | supermarket – супермаркет
+Süß | sweet | солодкий
+die Tageskarte | menu | меню
+die Tasse | cup | чашка
+der Tee | tea | чай 
+Tee / Kaffee trinken | to have afternoon tea / coffee | пити чай / каву
+der Teller | plate | тарілка
+Trinken | to drink | пити
+die Untertasse | saucer | блюдце
+Zum Mitnehmen | take away meals | на винос
+Zum Wohl! | cheers! | будьмо!
+Alkoholfrei | non | alcoholic | безалкогольний
+das Bier | beer | пиво
+die Cola | coke | кола
+der Fruchtsaft | fruit juice | фруктовий сік
+der Kaffee | coffee | кава 
+die Limonade | lemonade | лимонад
+die Milch | milk | молоко
+der Saft | juice | сік
+der Sprudel | fizzy drink | газований напій
+das Wasser | water | вода 
+der Wein (Rot / Weiß) | wine (red / white) | вино (червоне/біле)
+die Ananas | pineapple | ананас
+der Apfel | apple | яблуко
+die Apfelsine | orange | апельсин
+die Aprikose | apricot | абрикос
+der Aufschnitt | sliced meats | нарізка
+die Birne | pear; light bulb | груша; лампочка
+der Blumenkohl | cauliflower | кольрабі
+die Bockwurst | boiled sausage | відварна сосиска
+die Bohnen | beans | квасоля
+die Bonbons | sweets | цукерки
+Braten | to roast | смажити
+die Bratkartoffeln | fried potatoes – смажена картопля
+die Bratwurst | sausage fried | жарена сосиска
+das Brot | bread | хліб
+das Brötchen | bread roll | булочка
+das Butterbrot | sandwich | бутерброд
+die Chips | crisps | чіпси 
+die Kartoffelschips | crisps | чіпси 
+die Cornflakes | cereals | пластівці
+das Ei | egg | яйце
+der Eintopf | stew | рагу
+das Eis | ice cream | морозиво
+die Erbsen | peas | горошок
+die Erdbeere | strawberry | полуниця
+Essen | to eat | їсти
+das Essen | food | їжа
+der Essig | vinegar | оцет
+das Fleisch | meat | м'ясо
+die Forelle | trout | форель
+die Frikadelle | meatball | фрикаделька
+die Gans | goose | гусак
+das gekochte Ei | boiled egg | варене яйце
+das Gemüse | vegetables | овочі
+das Gewürz | spice | спеція
+die Gurke | cucumber | огірок
+das Hähnchen | chicken (food) | курка
+die Himbeere | raspberry | малина
+der Honig | honey | мед
+das Kalbfleisch | veal | теляче м'ясо
+die Karotte | carrot | морква
+der Kartoffelsalat | potato salad | картопляний салат
+der Kartoffelbrei | mashed potato | картопляне пюре
+das Kartoffelpüree | mashed potato | картопляне пюре
+der Käse | cheese | сир
+das Kaugummi | chewing gum | жувальна гумка
+die Kekse | biscuits | печиво
+die Kirsche | cherry | вишня
+der Kohl | cabbage | капуста
+der Kopfsalat | lettuce | салат
+das Kotelett | chop; cutlet | котлета
+der Kuchen | cake | торт
+der Lachs | salmon | лосось
+das Lamm(fleisch) | lamb= animal (lamb =meat) | ягня (ягнятина)
+die Leber | liver | печінка
+die Marmelade | jam | варення
+die Nudeln | pasta | макарони
+die Nuss | nut | горіх 
+das Obst | fruit | фрукти
+das Öl | oil | олія
+die Orangenmarmelade | marmalade | апельсинове варення
+die Pampelmuse | grapefruit | грейпфрут
+der Pfeffer | pepper | перець
+der Pfirsich | peach | персик
+die Pflaume | plum | слива
+der Pilz | mushroom | гриб
+die Pommes (frites) | chips | картопля фрі
+die Pralinen | chocolates | шоколадні цукерки
+der Riegel | bar (e.g. of chocolate) | плитка (наприклад, шоколаду)
+das Rindfleisch | beef | яловичина
+der Rosenkohl | brussel sprouts | капуста брюссельська
+das Salz | salt | сіль
+die Salzkartoffeln | boiled potatoes | варена картопля
+das Sauerkraut | pickled cabbage | квашена капуста
+der Schaschlick | kebab | шашлик
+die Scheibe | slice | кусень
+der Schinken | ham | шинка
+die Schlagsahne | whipped cream | вершки
+das Schnitzel | escalope; schnitzel | шніцель
+die Schokolade | chocolate | шоколад
+die schwarze Johannisbeere | blackcurrant | чорна смородина
+das Schweinefleisch | pork | свинина
+der Senf | mustard | гірчиця
+die Soße | gravy; sauce | соус
+der Speck | bacon | бекон
+das Spiegelei | fried egg | яєчня
+der Spinat | spinach | шпинат
+die Suppe | soup | суп
+die Süßigkeiten | sweets | солодощі
+das Toastbrot | toast | тост
+die Traube | grape | виноград
+die Weintraube | grape | виноград
+der Truthahn | turkey | індик
+Weiß (Weißbrot) | white (white bread) | білий (біле хлібець)
+die Wurst | sausage – ковбаса
+die Zitrone | lemon | лимон
+der Zucker | sugar | цукор
+die Zwiebel | onion | цибуля
+die Büchse | can | бляшанка
+die Dose (Dosenöffner) | can; tin (opener) | банка; консервна бляшанка (відкривач)
+der Karton | cardboard box | картонна коробка
+der Korb | basket | кошик
+die Packung | packet | пакет
+das Paket | packet | пакет
+die Portion | helping; portion | порція
+die Schachtel | box (e.g. chocolates) | коробка (наприклад, цукерок)
+die Tüte | bag (= paper/plastic) | пакет (паперовий/пластиковий)
+das Besteck | cutlery | столові прибори
+Bestehen aus | to consist of | складатися з
+die Diät | diet (to be on a diet) | дієта (бути на дієті)
+Dienen | to serve | подавати
+Enthalten | to contain | містити
+das Fett | fat; grease | жир
+das Geflügel | poultry | птиця
+der Geschmack | taste | смак
+Gießen | to pour | наливати
+Pikant | spicy | пікантний
+Probieren | to try | пробувати
+Reichen | to pass (e.g. salt) | передавати (наприклад, сіль)
+Riechen | to smell (sth) | чути запах
+Satt | full up (food) | наїдений
+Schälen | to peel | чистити
+der Spargel | asparagus | спаржа
+der Vegetarier | vegetarian | вегетаріанець / вегетаріанка
+die Vegetarierin | vegetarian | вегетаріанець / вегетаріанка
+die Verpackung | packaging – упаковка
+
+	Socialising, special occasions and festivals 
+
+sich amüsieren | to enjoy oneself | розважатися
+die Ansichtskarte | postcard (picture) | листівка (з малюнком)
+ausgeben | to spend (money) | витрачати
+ausgehen | to go out | виходити
+die Auskunft | information | інформація
+die Ausstellung | exhibition | виставка
+basteln | to make things; do dIY | майструвати
+bestellen (abbestellen) | to order (to cancel) | замовляти (скасовувати)
+bezahlen | to pay (for) | оплачувати
+das Bild | picture | малюнок
+der Blumenhändler | flower (florist) | квітковий торговець
+der Chor | choir | хор
+das Computerspiel | computer game | комп'ютерна гра
+die Sehenswürdigkeiten besichtigen | to go sight | seeing | оглядати визначні місця
+einkaufen (gehen) | to shop; go shopping | робити покупки (іти в магазин)
+die Einladung | invitation (to invite) | запрошення (запрошувати)
+der Eintritt | admission charge | вхідний квиток
+die Eisbahn | ice rink (to ice skate) | ковзанка (ковзанка)
+die Erfrischungen | refreshments | охолодження
+das Fest | festival; party | свято; вечірка
+das Feuerwerk | fire(works) | феєрверк
+frei (im Freien) | free; (in the open air) | вільний; (на свіжому повітрі)
+die Freizeit(beschäftigung) | free time; leisure (activity) | вільний час; дозвілля (заняття)
+Frohe Weihnachten | Happy Christmas | Веселого Різдва
+der Heiligabend | Christmas Eve | Різдвяний вечір
+Ostern | Easter | Великдень
+der Silvester | New Year's Eve | Новий рік
+das Weihnachten | Christmas | Різдво
+der Weihnachtsbaum | Christmas/fir tree | ялинка
+der Tannenbaum | Christmas/fir tree | ялинка
+funktionieren | to work (function) | працювати (функціонувати)
+genießen | to enjoy | насолоджуватися
+das Geschenk | present | подарунок
+das Handy | mobile phone | мобільний телефон
+der Herr | Mr; gentleman | пан
+Herr Ober! | waiter! | офіціант!
+das Herz | heart | серце
+im Freien | open air (in the) | на відкритому повітрі
+der Jugendklub | youth club | молодіжний клуб
+die Jugendlichen (r) | young person | молодь
+jung | young | молодий
+der Kalender | diary (for appointments) | календар; щоденник (записів)
+der Terminkalender | diary (for appointments) | календар; щоденник (записів)
+die Karte(n) | card (playing/greetings) | картка (гральна / вітальна)
+kaufen | to buy | купувати
+das Kaufhaus | department store | універмаг
+kennen | to know (people) | знати (людей)
+kennen lernen | to get to know | познайомитися
+kosten(los) | to cost (free) | коштувати (безкоштовно)
+der Kuss | kiss | поцілунок
+lachen | to laugh – сміятися
+die Lust haben | to feel like (doing something) | мати бажання
+malen | to paint | малювати
+das Mitglied | member | член
+der Preis | price; prize | ціна; приз
+preiswert | cheap; value for money | вигідний
+die Rechnung | bill (e.g. restaurant) | рахунок (наприклад, у ресторані)
+reservieren | to reserve | зарезервувати
+sammeln | to collect | збирати
+das Schach | chess | шахи
+schenken | to give (a present) | дарувати (подарунок)
+schicken | to send (to text / e | mail) | відправляти (повідомлення / електронного листа)
+der Schlussverkauf | sale | розпродаж
+das Sonderangebot | special offer | спеціальна пропозиція
+spannend | exciting | захоплюючий
+der Spaß | fun | розвага
+spät | late | пізно
+teuer | expensive; dear | дорогий
+treffen | to meet (by intention) | зустрічатися (з наміром)
+der Treffpunkt | meeting place | місце зустрічі
+verbringen | to spend (=time) | проводити (час)
+verkaufen | to sell (out) | продавати (розпродавати)
+vorstellen | to introduce oneself | представлятися
+zahlen | to pay (the bill) | платити (рахунок)
+begegnen | to meet | зустрічатися
+begleiten | to accompany | супроводжувати
+bekannt | well | known | відомий
+der Bekannte | acquaintance | знайомий
+drucken | to print | друкувати
+der Drucker | printer | принтер
+empfehlen | to recommend | рекомендувати
+das Ergebnis | result; score | результат; оцінка
+die Ermäßigung | discount | знижка
+der Faschingsdienstag | Shrove Tuesday | Вівторок масляної неділі
+faulenzen | to laze about | ліниво пропускати час
+feiern | to celebrate | відзначати
+der Festtag | public holiday | святковий день
+die Gebühr | fee | плата
+gebührenfrei | free | безкоштовно
+gratis | free | безкоштовно
+das Gemälde | painting | картина
+herunterladen | to download | завантажувати
+die Hochzeit | wedding | весілля
+das Kabel | cable; wiring | кабель; проводка
+der Karneval | carnival | карнавал
+die Kerze | candle | свічка
+die Messe | mass (church) | меса (церковна)
+plaudern | to chat | балакати
+der Schaufensterbummel | window shopping | прогулянка магазинами
+schieben | to push | товкти
+schmücken | to decorate (garlands) | прикрашати (гірляндами)
+die Sitten | customs; traditions | звичаї; традиції
+die Tastatur | keyboard (computer) | клавіатура (комп'ютера)
+tippen | to type | печатати
+überraschen | to surprise | дивувати
+die Verabredung | appointment | побачення
+die Veranstaltung | event | подія
+vorziehen | to prefer | віддавати перевагу
+
+
+
+	TV, films and music 
+die Blockflöte | recorder | блокфлейта
+die Flöte | flute | флейта
+die Querflöte | flute | флейта
+die Geige | violin | скрипка
+die Gitarre | guitar | гітара
+die Klarinette | clarinet | кларнет
+das Klavier | piano | піаніно
+das Schlagzeug | drums; percussion | ударні
+die Trompete | trumpet | труба
+üben | to practise | практикувати
+der Dokumentarfilm | documentary | документальний фільм
+die Komödie | comedy | комедія
+der Krimi | crime story; thriller | кримінальний роман; трилер
+die Nachrichten | news | новини
+die Quizsendung | quiz show | вікторина
+die Seifenoper | soap opera | мильна опера
+die Sendung | programme (e.g. TV) | програма (наприклад, по ТБ)
+die Serie | series (e.g. on TV) | серіал
+der Zeichentrickfilm | cartoon | мультфільм
+anschauen | to look at; to watch | дивитися
+ansehen | to look at; to watch | дивитися
+der Ball | ball (= sport); dance | м'яч (у спорті); танці
+fernsehen | to watch TV | дивитися телевізор
+der Fernseher | TV set | телевізор
+hören | to hear | слухати
+der Hörer | receiver (telephone) | слухавка
+die Illustrierte | magazine | ілюстрований журнал
+das Konzert | concert | концерт
+der Kopf(hörer) | head(phones) | навушники
+Lieblings | | favourite | улюблений
+das Lied | song | пісня
+die Musik (Pop / Volks / klassische) | music (pop / folk / classical) | музика (поп / народна / класична)
+der Musiker | musician (to play music) | музикант
+die Musikerin | musician (to play music) | музикант
+die Oper | opera | опера
+der Roman | novel | роман
+der Sänger | singer | співак / співачка
+die Sängerin | singer | співак / співачка
+der Schauspieler | actor / actress | актор / актриса
+die Schauspielerin | actor / actress | актор / актриса
+sehen | to see | бачити
+singen | to sing | співати
+die Stereoanlage | stereo system | стереосистема
+der Tanz | dance | танець
+tanzen | to dance | танцювати
+das Taschenbuch | paperback | книга у м'якій обкладинці
+das Theater(stück) | theatre (play) | театр (п'єса)
+die Tragödie | tragedy | трагедія
+zeichnen | to draw | малювати
+zeigen | to show | показувати
+die Zeit | time | час
+die Zeitschrift | magazine | журнал
+die Zeitung | newspaper | газета
+das Abenteuer | adventure | пригода
+aufführen | to perform – виконувати
+die Aufführung | performance | виступ
+der Bildschirm | screen | екран
+blasen | to blow | дмухати
+die Blaskapelle | brass band | духовий оркестр
+die Bühne | stage | сцена
+die Fernbedienung | remote control | пульт
+die Garderobe | cloakroom (theatre) | гардероб
+das Gerät | implement; equipment | пристрій; обладнання
+das Geräusch | sound; quiet | звук; тиша
+die Medien (Massenmedien) | media | ЗМІ (масові ЗМІ)
+der Moderator | TV presenter | ведучий телевізійного ефіру
+das Parkett | stalls (theatre) | партер
+passieren | to happen | траплятися
+der Rang | circle (theatre) | бельетаж
+die Stimme | voice | голос
+die Stimmung | atmosphere | атмосфера
+die Tagesschau | TV evening news | вечірні новини на ТБ
+die Unterhaltung | entertainment | розваги
+der Untertitel | subtitle | субтитри
+die Vorstellung | performance; introduction | вистава; введення
+die Werbung | advertising | реклама
+der Zuschauer | audience; viewers | глядач; глядачі
+
+	Holidays and exchanges 
+
+der Affe | monkey | мавпа
+anders(wo) | different (somewhere else) | інший (десь інде)
+die Anmeldung | reception | реєстрація
+annehmen | to accept | приймати
+anrufen | to phone | дзвонити
+der Aufenthalt | stay | перебування
+der Aufzug | lift | ліфт
+der Ausflug | excursion; trip | екскурсія; поїздка
+ausfüllen | to fill in (form) | заповнювати
+die Auskunft | information | інформація
+das Ausland | abroad | закордон
+der Ausländer | foreigner | іноземець / іноземка
+die Ausländerin | foreigner | іноземець / іноземка
+die Aussicht | view | вид
+die Auswahl | choice; selection | вибір; відбір
+der Ausweis | identity card; I.D | документ, удостовірюючий особу
+der Bär | bear | ведмідь
+bedienen | to serve | обслуговувати
+die Bedienung | service (=in restaurant) | обслуговування (=у ресторані)
+das Bett (Einzel / Doppel) | bed (single/double) | ліжко (одномісне / двомісне)
+die Bettwäsche | bedlinen | постільна білизна
+bedecken | to cover | покривати
+bedeckt | overcast | хмарно
+bewölkt | overcast | хмарно
+donnern | to thunder | грім
+dunkel | dark | темно
+frieren | to freeze | замерзати
+das Gewitter | thunderstorm | гроза
+der Hagel | hail | град
+hageln | to hail | падати градом
+heiß | hot | спекотно
+heiter | bright (= weather) | ясно
+die Hitze | heat | спека
+kalt | cold | холодно
+das Klima | climate | клімат
+kühl | cool | прохолодно
+der Löwe | lion | лев
+nass | wet | мокро
+der Nebel | fog(gy); mist(y) | туман; димка
+der Regen(mantel) | rain(coat) | дощ (плащ)
+der Regenschirm | umbrella | парасолька
+regnen | to rain | дощити
+regnerisch | rainy | дощово
+der Schauer | shower (=weather) | дощ
+scheinen | to shine | світити
+der Schnee | snow | сніг
+schneien | to snow | падати снігом
+schön | beautiful; fine (= weather) | гарно; прекрасно
+sich sonnen | to sunbathe | засмагати
+die Sonne | sun | сонце
+sonnig | sunny | сонячно
+Sturm | storm(y) | штормовий
+stürmisch | storm(y) | штормовий
+Wetter (Bericht / Vorhersage) | weather (forecast) | прогноз погоди
+windig | windy | вітряно
+Wolke (wolkenlos) | cloud(less) | хмара (безхмарно)
+wolkig | cloudy | хмарно
+Blick | look; glance | погляд
+bleiben | to stay; remain | залишатися
+Broschüre | brochure | брошура
+Campingplatz | camping; camp site | кемпінг; табір
+Empfang(sdame) | reception(ist) | приймання (рецепція)
+Ferien | holiday | відпустка
+Formular | form | форма
+Fotoapparat | camera | фотоапарат
+Fotograf/in | photographer(‘s) | фотограф
+Fundbüro | lost property office | бюро знахідок
+Gast | guest | гість
+Gastgeber | host | господар
+Gasthaus | pub | пивниця
+Gasthof | pub | пивниця
+Gaststätte | restaurant; pub | ресторан; півниця
+Gepäck | luggage | багаж
+gültig | valid | дійсний
+Herbergseltern | wardens (of youth hostel) | батьки | опікуни (молодіжного готелю)
+Insel | island | острів
+Jugendherberge | youth hostel | молодіжний готель
+Koffer | suitcase | валіза
+Küste | coast | узбережжя
+Lagerfeuer | camp fire | табірний вогонь
+Land (auf dem / aufs) | country (in the / to the) | країна (в / до)
+Landkarte | map | карта
+Landschaft | countryside; scenery | краєвид
+Luxus | luxury | розкіш
+Meer | sea | море
+mitnehmen | to take (with you) | брати з собою
+Ort | place | місце
+Pass (Reisepass) | passport | паспорт
+Pension (Vollpension) | boarding house (full board) | пансіонат (повний пансіон)
+Personalausweis | identity card | посвідчення особи
+Prospekt | leaflet | буклет
+Reise | journey (longer) | подорож
+Reisebüro | travel agent’s | турагентство
+Reisebus | coach | автобус
+reisen | to travel | подорожувати
+Reisende(r) | traveller | мандрівник
+Reisescheck | traveller’s cheque | чек подорожуючого
+Reiseziel | destination | місце призначення
+Sand(burg) | sand (castle) | пісок (замок)
+Scheckheft | cheque book | чекова книжка
+Schlafsack | sleeping bag | спальний мішок
+Sonnenbrand | sunburn | сонячний удар
+Sonnencreme | sun cream; lotion | сонячний крем; лосьйон
+Steward/ess | air steward; hostess | стюард; стюардеса
+Strand | beach | пляж
+suchen | to look for | шукати
+Taschenlampe | torch | ліхтар
+Taschenmesser | pocket knife; penknife | кишеньковий ніж
+Überfahrt | crossing (sea) | переправа
+übernachten | to stay the night – переночувати
+Unterkunft | accommodation | проживання
+unterwegs | on the way | в дорозі
+Urlaub | holiday | відпустка
+Welle | wave | хвиля
+Wohnwagen | caravan | будка на колесах
+Zelt | tent | намет
+zelten | to camp | ставати в палатку
+Zimmer (Einzel | , Doppel | , Familien | ) | room (single / double / family) | кімната (одномісна / двомісна / сімейна)
+Zimmer frei | rooms available/ B & B | вільні номери; зручності для сніданку
+Zimmermädchen | maid | горнична
+Aufenthaltsdauer | length (of stay) | тривалість перебування
+Aufheiterungen | bright periods | ясні періоди
+austauschen | to exchange | обмінюватися
+entkommen | to escape | втекти
+entscheiden | to decide | вирішити
+entspannen (sich) | to relax | розслабитися
+feucht | humid | вологий
+Fremdenführer | tour guide | екскурсовод
+freuen (sich) auf | to look forward to | чекати з нетерпінням
+freuen (sich) über | to be pleased about | радіти чому | небудь
+Führung | guided tour | екскурсія
+Kurs | exchange rate | курс обміну
+lauwarm | lukewarm | прохолодний
+Niederschlag | precipitation | опади
+Reiseführer | tourist guide | туристичний посібник
+Rolltreppe | escalator | ескалатор
+Rundgang | guided tour | оглядова екскурсія
+Rundfahrt | guided tour | оглядова екскурсія
+Schatten | shade | тінь
+Tropfen | drop (e.g. water) | крапля
+veränderlich | changeable | змінний
+verändern (sich) | to change | змінюватися
+wechselhaft | changeable | змінний
+
+	Environmental, cultural and social issues 
+
+Abfall(eimer) | rubbish (bin/dustbin) | смітник
+Ampel | traffic lights | світлофор
+Angst haben | to be frightened | боятися
+anspringen | to start (cars) | запалювати
+arm | poor | бідний
+Blei | lead | свинець
+Brand | fire | пожежа
+Erde | earth | земля
+Grad | degree | градус
+Grenze | border | кордон
+herrlich | splendid; wonderful | чудовий
+Himmel | sky | небо
+hoch | high | високий
+Jahr(eszeit) | year (season) | рік (сезон)
+jährlich | annually | щорічно
+Luft | air | повітря
+Müll(tonne) | rubbish/waste (dustbin) | сміттєвий бак
+Nachteil | disadvantage | недолік
+niedrig / tief | low – низький
+Abschleppwagen | breakdown lorry | відбуксирувальний вантажівка
+abschliessen | to lock up | закривати (на замок)
+Altpapier | recycled paper | вторинна сировина
+anzünden | to light | запалювати
+aufgeben | to stop; give up | відмовлятися; кидати
+behandeln | to treat | лікувати
+Behandlung | treatment | лікування
+behindert | disabled | інвалідний
+beklagen (sich) | to complain | скаржитися
+beleuchten | to light up | освітлювати
+beschädigen | to damage | пошкоджувати
+beschäftigt | busy | зайнятий
+beschließen | to decide | вирішувати
+beschweren (sich) | to complain | скаржитися
+bessern (sich) | to improve | покращувати
+Besserung | improvement; getting better | покращення
+bestätigen | to confirm | підтверджувати
+bestehen auf | to insist on | наполягати на
+betrügen | to deceive | обманювати
+betrunken | drunk | п'яний
+beweisen | to prove | доводити
+Dieb(stahl) | thief (theft) | злодій (крадіжка)
+dringend | urgent | невідкладний
+drogensüchtig | drug dependent | наркоман
+drohen | to threaten | загрожувати
+Einbrecher | burglar – зломник
+der ertrinken | to drown | тонути
+der Flaschencontainer | bottle bank | контейнер для пляшок
+der Fleck | stain; spot | пляма
+das Gefängnis | prison | в'язниця
+die Geldstrafe | fine (money) | грошовий штраф
+das Gesetz | law | закон
+das gestattet | permitted | дозволено
+die Gewohnheit | custom; habit | звичка
+die globale Erwärmung | global warming | глобальне потепління
+klagen | to complain | скаржитися
+das Kraftwerk | power station | електростанція
+löschen | to extinguish; put out | загасити
+lösen | to solve | вирішити
+lügen | to lie | брехати
+das Missverständnis | misunderstanding | непорозуміння
+der Mond | moon | місяць
+der Mord | murder | вбивство
+der Notruf | emergency (phone call) | служба порятунку (телефонний дзвінок)
+der Rat | advice; council | порада; рада
+raten | to advise; guess | радити; вгадувати
+recyceln | to recycle | переробляти
+reduzieren | to reduce | зменшувати
+die Regel | rule | правило
+die Regierung | government | уряд
+das Retten | to save; rescue | рятувати
+die Rettung | rescue | рятування
+das Risiko | risk | ризик
+der Rollstuhl | wheelchair | інвалідне крісло
+sich schämen | to be ashamed | соромитися
+schulden | to owe | боргувати
+schuldig | guilty; owing | винен; боржник
+schützen | to protect | захищати
+die Sozialwohnung | council house | комунальна квартира
+stehlen | to steal | красти
+sterben | to die | померти
+der Tod | death | смерть
+töten | to kill | вбивати
+trampen / per Anhalter fahren | to hitch | hike | подорожувати автостопом
+der Treibhauseffekt | greenhouse effect | парниковий ефект
+überschwemmen | to flood | затоплювати
+umkommen / ums Leben kommen | to die | загинути
+umtauschen | to exchange | обмінювати
+der Unterschied | difference | відмінність
+verbrauchen | to consume; use up | споживати; використовувати
+verderben | to spoil; pollute | псувати; забруднювати
+vergiften | to poison | отруювати
+der Vergleich | comparison (to compare) | порівняння (порівнювати)
+verhaften | to arrest | арештувати
+sich verirren / verlaufen | to lose one’s way; to get lost | загубитися; заблукати
+vermeiden | to avoid | уникати
+verschmutzen | to pollute (pollution) | забруднювати (забруднення)
+verschwenden | to waste | марнувати
+verschwinden | to disappear | зникати
+versichern | to insure (insurance) | страхувати (страховка)
+verstecken | to hide | приховувати
+wegwerfen | to throw away | викидати
+wieder verwerten | to recycle | повторно використовувати
+zerstören | to destroy | знищувати
+der Zeuge | witness – свідок
+
+	School life 
+
+das Abitur | A level exam / A level student | випускний іспит / випускник / випускниця
+der Abiturient | A level exam / A level student | випускний іспит / випускник / випускниця
+die Abiturientin | A level exam / A level student | випускний іспит / випускник / випускниця
+die Aufgabe | exercise; task | завдання
+aufhören | to stop (doing something) | припиняти
+aufmachen | to open | відкривати
+aufräumen | to tidy; clear up; away | прибирати
+aufpassen | to pay attention | уважно слухати
+die Aula | school hall | актова зала
+ausmachen | to turn off | вимикати
+die Doppelstunde | double period | подвійний урок
+das Gebäude | building | будівля
+das Gespräch | conversation | розмова
+die Gruppe | group | група
+die Hausaufgaben | homework; housework | домашнє завдання; домашня робота
+die Hausarbeit | homework; housework | домашнє завдання; домашня робота
+nach Hause | home (going home) | додому
+der Hausmeister | caretaker | консьєрж / консьєржка
+die Hausmeisterin | caretaker | консьєрж / консьєржка
+die Haustür | front door | вхідні двері
+das Heft | exercise book | зошит
+interessant | interesting | цікавий
+sich interessieren für | to be interested in | цікавитися чимось
+die Kindheit | childhood | дитинство
+die Klasse (zweite Klasse) | class (2nd class) | клас (другий клас)
+die Klassenarbeit | test; assessment | контрольна робота
+der Klassenkamerad | classmate | однокласник / однокласниця
+die Klassenkameradin | classmate | однокласник / однокласниця
+das Klassenzimmer | classroom | класна кімната
+kompliziert | complicated | складний
+korrigieren | to correct; mark | виправляти; оцінювати
+das Labor | laboratory | лабораторія
+sich langweilen | to be bored | нудьгувати
+langweilig | boring | нудний
+der Lärm | noise (loud) | шум
+lehren | to teach | вчити
+der Lehrer | teacher | вчитель / вчителька
+die Lehrerin | teacher | вчитель / вчителька
+der Lehrling | ship) | навчання в професії / практикант
+die Lehrlingschaft | apprentice ( | ship) | навчання в професії / практикант
+leicht | light (weight); easy | легкий
+lernen | to learn | вчитися
+lesen | to read | читати
+das Lesen | reading | читання
+die Note | mark | оцінка
+nötig | necessary | необхідний
+notwendig | necessary | необхідний
+nützlich | useful | корисний
+nutzlos | useless | непотрібний
+die Oberstufe | sixth form | старший курс
+die Pause | break; lunch break | перерва; обідня перерва
+die Mittagspause | break; lunch break | перерва; обідня перерва
+der Platz | seat; room; square; court; pitch | місце; кімната; майданчик
+prüfen | to test; examine; check | перевіряти; тестувати
+die Prüfung | examination | іспит
+das Examen | examination | іспит
+der Punkt | point (place / score / idea); full stop | точка (місце / бал / ідея); крапка
+pünktlich | punctual; on time | пунктуальний; вчасний
+richtig | right; correct – правильний
+der Saal | hall (large room / concert) | зал; зала
+die Halle | hall (large room / concert) | зал; зала
+schreiben | to write | писати
+das Schreibpapier | writing paper | письмовий папір
+das Schreibwarengeschäft | stationer's | канцелярський магазин
+der Schuldirektor | head teacher | директор школи
+die Schuldirektorin | head teacher | директор школи
+die Schule | school | школа
+der Schüler | pupil | учень / учениця
+die Schülerin | pupil | учень / учениця
+der Schüleraustausch | school exchange | шкільний обмін
+der Schulhof | school playground | шкільний подвір'я
+die Schulstunde | lesson | урок
+schwach | weak; poor (work) | слабкий; поганий
+schweigen | to be silent; to say nothing | мовчати
+schwer | hard; difficult | складний
+schwierig | difficult | складний
+die Seite | page; side | сторінка; бік
+das Semester | term | семестр / триместр
+das Trimester | term | семестр / триместр
+stimmt (das stimmt) | that's right | це правда
+der Student | student | студент / студентка
+die Studentin | student | студент / студентка
+studieren | to study | вивчати; навчатися
+die Stunde | hour | година
+der Stundenplan | timetable (school) | розклад занять (шкільний)
+die Tafel | board (black / white) | дошка (шкільна)
+der Tag | day | день
+das Tagebuch | diary (account) | щоденник
+der Unterricht | lessons | уроки
+unterrichten | to teach | викладати
+der Versuch | experiment; attempt | спроба; експеримент
+versuchen | to try (to do something) | спробувати (щось зробити)
+die Wahl(fach) | choice (option subject) | вибір (вибірковий предмет)
+wählen | to choose | вибирати
+wissen | to know (facts) | знати (факти)
+die Woche | week | тиждень
+das Wochenende | weekend | вихідні
+das Wort | word | слово
+zu hören | to listen to | слухати
+der Bleistift | pencil | олівець
+das Etui | pencil case | пенал
+der Filzstift | felt tip pen | фломастер
+füllen | to fill | наповнювати
+der Füller | fountain pen | ручка з пером
+der Gummi | rubber (eraser) | гумка (стерка)
+der Kugelschreiber | biro / ball point pen | кулькова ручка / ручка
+der Kuli | biro / ball point pen | кулькова ручка / ручка
+das Lineal | ruler | линійка
+das Notizbuch | note book | блокнот
+das Papier(e) | paper(s); documents | папір; документи
+der Radiergummi | rubber (eraser) | гумка (стерка)
+die Sache(n) | thing (things / belongings) | річ (речі / речення)
+die Schere | scissors | ножиці
+der Stift | something to write with | письмовий інструмент
+das Stück | piece (paper / cake etc) | шматок
+der Taschenrechner | calculator | калькулятор
+das Taschentuch | handkerchief | хустка
+das Wörterbuch | dictionary | словник
+der Zettel | note; piece of paper | записка; аркуш
+
+Chemie | chemistry | хімія
+Erdkunde | geography | географія
+das Fach | subject (option) | предмет (вибірковий предмет)
+das Wahlfach | subject (option) | предмет (вибірковий предмет)
+die Fremdsprache | language (foreign) | іноземна мова
+die GCSE | Prüfungen | GCSE exams | іспити зі здобуття сертифікату GCSE
+die Geschichte | history | історія
+die Hauswirtschaftslehre | home economics | домашня економіка
+die Informatik | I.T. | інформатика
+die Mathematik | maths | математика
+die Naturwissenschaften | science | природничі науки
+das Pflichtfach | compulsory subject | обов'язковий предмет
+die Physik | physics | фізика
+die Religion | R.E. (Religious Education) | релігійна освіта
+die Technologie | CDT (Craft, Design and Technology) | технології
+das Turnen | P.E. (Physical Education) | фізичне виховання
+die Turnhalle | gymnasium | спортивний зал; гімназія
+die Berufsschule | technical college | професійно | технічний коледж
+die Gesamtschule | comprehensive school | загальноосвітня школа
+die Grundschule | primary school | початкова школа
+das Gymnasium | grammar school | гімназія
+die Hauptschule | secondary modern school | базова школа
+das Internat | boarding school | інтернат
+der Kindergarten | nursery school | дитячий садок
+die Privatschule | private school | приватна школа
+die Realschule | secondary technical school | реальна школа
+die Universität | college; university | університет; вищий навчальний заклад
+die Uni | college; university | університет; вищий навчальний заклад
+Higher | higher | вищий
+der Aufsatz | essay | есе
+die Belohnung | reward | винагорода
+Bemerken | to notice | помічати
+sich benehmen | to behave | вести себе
+beobachten | to watch; observe | спостерігати
+die Betriebswirtschaft | business studies | бізнес | економіка
+die Bildung | education | освіта
+brav | well behaved | слухняний; бідний
+das Brett (schwarzes) | notice board | дошка оголошень (чорна)
+durchfallen | to fail (exam) | провалюватися (екзамен)
+einreichen | to hand in | подавати
+falten | to fold | складати
+der Fortschritt | progress | прогрес
+der Gang | corridor; gear | коридор; передача
+herausfinden | to find out; learn | дізнатися
+herunterladen | to (down)load | завантажувати
+kleben | to stick | клеїти
+loben | to praise | хвалити
+sich lohnen | to be worthwhile | бути вигідним
+mangelhaft | poor | незадовільний
+meinen | to mean; think | мислити; вважати
+mündlich | oral | усно
+nachdenken | to think over; reflect | обдумувати
+nachsitzen | to be kept in | сидіти після уроків
+müssen | to have to; must | повинен; треба
+rechnen | to calculate | рахувати
+die Rolle | role | роль
+schaffen | to succeed; achieve | досягати
+schriftlich | in writing | письмово
+das Schulzeugnis | school report | шкільний звіт
+sitzen bleiben | to repeat the year | повторювати рік
+die Sozialkunde | social science | соціальні науки
+stören | to disturb; interrupt | перешкоджати; переривати
+übersetzen | to translate | перекладати
+die Übersetzung | translation | переклад
+die Umfrage | survey | опитування; анкетування
+die Meinungsumfrage | survey | опитування; анкетування
+verbessern | to correct; improve | вдосконалювати
+die Versammlung | meeting; school assembly | збори; шкільна асамблея
+die Vokabeln | vocabulary | словниковий запас
+zählen | to count – рахувати
+
+	Work experience, future study and jobs 
+
+die Arbeit | work | робота
+arbeiten | to work | працювати
+der Arbeiter | worker | робітник / робітниця
+die Arbeiterin | worker | робітник / робітниця
+die Ausbildung | training | навчання
+ausbilden | to train | навчати
+der Bericht | report | звіт
+der Beruf | profession | професія
+das Betriebspraktikum | work experience | стажування
+die Brieftasche | wallet | гаманець
+das Büro | office | офіс
+die Fabrik | factory | фабрика
+der Feierabend | end of work day | закінчення робочого дня
+der Feiertag | public holiday | святковий день
+die Firma | firm; company | фірма; компанія
+der Betrieb | firm; company | фірма; компанія
+die Ganztagsstelle | full time job | повна робота
+das Gehalt | salary; pay | зарплата
+das Geld(tasche) | money (purse) | гроші; гаманець
+die Kasse | till; cash desk | каса
+das Kleingeld | change (small) | дрібні гроші
+das Konto | account (bank) | рахунок (банківський)
+die Kreditkarte | credit card | кредитна картка
+der Kunde | customer | клієнт / клієнтка
+die Kundin | customer | клієнт / клієнтка
+der Lohn | wages | зарплата; оплата праці
+die Münze | coin | монета
+das Pfund | pound (= sterling/ weight) | фунт
+die Reklame | advert | реклама
+der Schein | note (e.g. 50 euros) | купюра
+die Stelle | place; job | місце; робота
+das Taschengeld | pocket money | кишенькові гроші
+die Teilzeitarbeit | part time work | неповна зайнятість
+das Telefonbuch | telephone directory | телефонний довідник
+die Telefonzelle | telephone box | телефонна будка
+der Termin | appointment | зустріч; призначений час
+die Theke | counter | прилавок; стійка
+das Trinkgeld | tip (money) | чайові
+der Umschlag | envelope | конверт
+unterschreiben | to sign | підписувати
+die Unterschrift | signature | підпис
+verdienen | to earn | заробляти
+die Vorwahl | dialling code | телефонний код
+weiter machen | to continue; carry on (doing something) | продовжувати
+die Zukunft | future – майбутнє
+der Arbeitslose | unemployed | безробітний / безробітна
+die Arbeitslose | unemployed | безробітний / безробітна
+die Armee | army | армія
+der Arzt | doctor | лікар / лікарка
+die Ärztin | doctor | лікар / лікарка
+das Babysitten | babysitting | нянювання
+babysitten | to babysit | нянювати
+der Beamte | civil servant; official | держслужбовець / держслужбовецька
+die Beamtin | civil servant; official | держслужбовець / держслужбовецька
+der Briefträger | postman / woman | поштар / поштарка
+die Briefträgerin | postman / woman | поштар / поштарка
+der Chef | boss | керівник / керівниця
+die Chefin | boss | керівник / керівниця
+der Elektriker | electrician | електрик / електрик
+die Elektrikerin | electrician | електрик / електрик
+die Feuerwehr | fire brigade | пожежна команда
+der Feuerwehrmann | fireman / woman | пожежник / пожежниця
+die Feuerwehrfrau | fireman / woman | пожежник / пожежниця
+der Frisör | hairdresser | перукар / перукарка
+die Friseurin | hairdresser | перукар / перукарка
+der Geschäftsmann | businessman / woman | бізнесмен / бізнесвумен
+die Geschäftsfrau | businessman / woman | бізнесмен / бізнесвумен
+der Händler | shopkeeper | торговець / торговиця
+die Händlerin | shopkeeper | торговець / торговиця
+der Ingenieur | engineer | інженер / інженерка
+die Ingenieurin | engineer | інженер / інженерка
+der Kassierer | cashier | касир / касирка
+die Kassiererin | cashier | касир / касирка
+der Kellner | waiter / waitress | офіціант / офіціантка
+die Kellnerin | waiter / waitress | офіціант / офіціантка
+der Klempner | plumber | водопровідник / водопровідниця
+die Klempnerin | plumber | водопровідник / водопровідниця
+der Koch | cook; chef | кухар / кухарка
+die Köchin | cook; chef | кухар / кухарка
+kochen | to cook | готувати
+der Künstler | artist | художник / художниця
+die Künstlerin | artist | художник / художниця
+der Ladenbesitzer | shop (owner / keeper) | власник магазину / власниця магазину
+die Ladenbesitzerin | shop (owner / keeper) | власник магазину / власниця магазину
+der Leiter | manager; leader | керівник / керівниця
+die Leiterin | manager; leader | керівник / керівниця
+die Leiter | ladder | драбина
+die Mauer | wall | стіна
+der Maurer | builder | муляр
+der Mechaniker | mechanic | механік
+die Mechanikerin | mechanic | механік
+der Programmierer | programmer | програміст / програмістка
+die Programmiererin | programmer | програміст / програмістка
+der Sekretär | secretary | секретар / секретарка
+die Sekretärin | secretary | секретар / секретарка
+der Soldat | soldier | солдат / солдатка
+die Soldatin | soldier | солдат / солдатка
+der Tierarzt | vet | ветеринар / ветеринарка
+die Tierärztin | vet | ветеринар / ветеринарка
+der Verkäufer | sales assistant | продавець / продавчиня
+die Verkäuferin | sales assistant | продавець / продавчиня
+der Arbeitgeber | employer | роботодавець
+der Arbeitnehmer | employee | працівник
+das Arbeitsamt | job centre | центр зайнятості
+die Arbeitslosigkeit | unemployment | безробіття
+die Berufsberatung | careers advice | кар'єрна консультація
+bewerben (sich) | to apply for a job | подавати заяву на роботу
+das Bewerbungsgespräch | job interview | співбесіда
+die Gelegenheit | opportunity; chance | можливість; шанс
+gelingen | to succeed | вдастися
+der Hochschulabschluss | degree | вища освіта
+das Jura | law | право
+der Lebenslauf | CV | резюме
+leisten | to achieve | досягати
+die Leistung | achievement | досягнення
+der Matrose | sailor | моряк
+die Seemann | sailor | моряк
+die Pension | retirement | пенсія 
+das Personal | staff | персонал
+qualifiziert | qualified | кваліфікований
+die Quittung | receipt | квитанція
+die Rente | pension | пенсія
+tippen | to type | друкувати (на клавіатурі)
+der Universitätsabschluss | degree | ступінь (вищої освіти)
+der Uniabschluss | degree | ступінь (вищої освіти)
+vorhaben | to plan | планувати
+der Vorschlag | suggestion | пропозиція
+das Vorstellungsgespräch | job interview | співбесіда
