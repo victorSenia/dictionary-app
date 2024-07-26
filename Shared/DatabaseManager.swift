@@ -82,30 +82,11 @@ class DatabaseManager: DatabaseHelper {
         
     }
     
-    //https://stackoverflow.com/questions/12133355/sqlite-transaction-syntax-for-ios
-    // func executeInTransaction(Supplier<T] supplier) {
-    // sqlite3_exec(db, "BEGIN EXCLUSIVE TRANSACTION", 0, 0, 0);
-    // if(sqlite3_prepare(db, query, -1, &compiledStatement, NULL) == SQLITE_OK)
-    // {
-    // for (someObject *obj in uArray)
-    // {
-    // sqlite3_bind_int(compiledStatement, 1, [obj value1]);
-    // sqlite3_bind_int(compiledStatement, 2, [obj value2]);
-    // if (sqlite3_step(compiledStatement) != SQLITE_DONE) NSLog(@"DB not updated. Error: %s",sqlite3_errmsg(db));
-    // if (sqlite3_reset(compiledStatement) != SQLITE_OK) NSLog(@"SQL Error: %s",sqlite3_errmsg(db));
-    // }
-    // }
-    // if (sqlite3_finalize(compiledStatement) != SQLITE_OK) NSLog(@"SQL Error: %s",sqlite3_errmsg(db));
-    // if (sqlite3_exec(db, "COMMIT TRANSACTION", 0, 0, 0) != SQLITE_OK) NSLog(@"SQL Error: %s",sqlite3_errmsg(db));
-    // sqlite3_close(db);
-    // }
-    
     func insertWord(word: Word) -> Int64 {
         if let id = getWordId(word: word){
             return id
         }
         let columns = [COLUMN_LANGUAGE, WORD_COLUMN_WORD, WORD_COLUMN_ARTICLE, WORD_COLUMN_ADDITIONAL_INFORMATION, WORD_COLUMN_KNOWLEDGE]
-        let insertedId =
         insert(insertStatementString: insertQuery(tableName: TABLE_NAME_WORD, columns: columns), statmentModifier: {insertStatement in
             sqlite3_bind_text(insertStatement, 1, (word.language as NSString).utf8String, -1, nil)
             sqlite3_bind_text(insertStatement, 2, (word.word as NSString).utf8String, -1, nil)
@@ -123,7 +104,6 @@ class DatabaseManager: DatabaseHelper {
             sqlite3_bind_null(insertStatement, index)
         }
     }
-    
     func insertTopic(topic: inout Topic) -> Int64 {
         if let id = topic.id {
             return id
@@ -137,7 +117,6 @@ class DatabaseManager: DatabaseHelper {
             rootId = insertTopic(topic: &root)
         }
         let columns = [COLUMN_LANGUAGE, TOPIC_COLUMN_LEVEL, TOPIC_COLUMN_NAME, TOPIC_COLUMN_ROOT_ID]
-        let insertedId =
         insert(insertStatementString: insertQuery(tableName: TABLE_NAME_TOPIC, columns: columns), statmentModifier: {insertStatement in
             sqlite3_bind_text(insertStatement, 1, (topic.language as NSString).utf8String, -1, nil)
             sqlite3_bind_int(insertStatement, 2, topic.level)
@@ -232,7 +211,6 @@ class DatabaseManager: DatabaseHelper {
             return id
         }
         let columns = [TRANSLATION_COLUMN_WORD_ID, COLUMN_LANGUAGE, TRANSLATION_COLUMN_TRANSLATION]
-        let insertedId =
         insert(insertStatementString: insertQuery(tableName: TABLE_NAME_TRANSLATION, columns: columns), statmentModifier: {insertStatement in
             sqlite3_bind_int64(insertStatement, 1, wordId)
             sqlite3_bind_text(insertStatement, 2, (translation.language as NSString).utf8String, -1, nil)
@@ -264,7 +242,6 @@ class DatabaseManager: DatabaseHelper {
             return
         }
         let columns = [COLUMN_ID, TRANSLATION_COLUMN_WORD_ID]
-        let insertedId =
         insert(insertStatementString: insertQuery(tableName: TABLE_NAME_WORD_TOPIC, columns: columns), statmentModifier: {insertStatement in
             sqlite3_bind_int64(insertStatement, 1, topicId)
             sqlite3_bind_int64(insertStatement, 2, wordId)
@@ -496,7 +473,7 @@ class DatabaseManager: DatabaseHelper {
     
     func deleteForLanguage(language: String) -> Int {
         let wordIds:[Int64] = getWordIdsForLanguage(language: language)
-        for var fromIndex in stride(from: 0, through: wordIds.count, by: PAGE_SIZE) {
+        for fromIndex in stride(from: 0, through: wordIds.count, by: PAGE_SIZE) {
             deleteWords(wordIds: wordIds[fromIndex..<min(wordIds.count, fromIndex + PAGE_SIZE)])
         }
         delete(deleteStatementString: deleteQuery(tableName: TABLE_NAME_TOPIC, whereClause: COLUMN_LANGUAGE + "= ?"), statmentModifier: { statement in
@@ -520,7 +497,6 @@ class DatabaseManager: DatabaseHelper {
             }
         }
         delete(deleteStatementString: deleteQuery(tableName: TABLE_NAME_WORD, whereClause: COLUMN_ID + " IN (" + createPlaceholders(length: wordIds.count) + ")"), statmentModifier: statmentModifier)
-        delete(deleteStatementString: deleteQuery(tableName: TABLE_NAME_WORD, whereClause: COLUMN_ID + " IN (" + createPlaceholders(length: wordIds.count) + ")"), statmentModifier: statmentModifier)
         delete(deleteStatementString: deleteQuery(tableName:TABLE_NAME_TRANSLATION, whereClause: TRANSLATION_COLUMN_WORD_ID + " IN (" + createPlaceholders(length: wordIds.count) + ")"), statmentModifier: statmentModifier)
         delete(deleteStatementString: deleteQuery(tableName:TABLE_NAME_WORD_TOPIC, whereClause: TRANSLATION_COLUMN_WORD_ID + " IN (" + createPlaceholders(length: wordIds.count) + ")"), statmentModifier: statmentModifier)
         return wordIds.count
@@ -531,7 +507,7 @@ class DatabaseManager: DatabaseHelper {
         query(queryStatementString: selectQuery(table: TABLE_NAME_WORD, columns: [COLUMN_ID], whereClause: COLUMN_LANGUAGE + "= ?", distinct: true), statmentModifier: {statement in
             sqlite3_bind_text(statement, 1, (language as NSString).utf8String, -1, nil)
         }, rowParser: {statement in
-            result.append(sqlite3_column_int64(statement, 1))
+            result.append(sqlite3_column_int64(statement, 0))
         })
         return result
     }

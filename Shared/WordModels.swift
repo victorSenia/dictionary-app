@@ -19,6 +19,9 @@ class Word: Identifiable, Equatable {
         self.language = language
     }
     var id: Int64?
+    var listId: String {get{
+        return id != nil ? String(id!) : word
+    }}
     
     var word: String
     var additionalInformation: String = ""
@@ -65,7 +68,7 @@ class Topic: Identifiable, Equatable {
     var level: Int32
     var root: Topic?
 }
-class WordCriteria {
+class WordCriteria: Decodable, Encodable {
     var languageFrom: String?
     var topicsOr: [Int64]?
     var rootTopic: Int64?

@@ -25,5 +25,4 @@ struct dictionaryApp: App {
     }
     
 }
-
 //https://github.com/Dougly/ViewsProgrammatically/blob/master/ViewsProgrammatically/ViewController.swift

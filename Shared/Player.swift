@@ -7,31 +7,32 @@
 
 import Foundation
 import AVFoundation
+import SwiftUI
 
 protocol UiUpdater{
     func updateCurrentWordState(index: Int, word: Word)
     func updateWordListState(wordList: [Word])
 }
-class Player: NSObject, AVSpeechSynthesizerDelegate{
+class Player: NSObject, ObservableObject, AVSpeechSynthesizerDelegate{
     var uiUpdater: UiUpdater?
     
     var words:[Word] = []
     // Create a speech synthesizer.
     let synthesizer = AVSpeechSynthesizer()
     let voiceRetriever = VoiceRetriever()
-    var playState = PlayingState()
+    @ObservedObject var playState = PlayingState()
     var wordProvider: WordProvider
     override init() {
         wordProvider = FileWordProvider()
         super.init()
-        synthesizer.delegate = self
-        AVSpeechSynthesisVoice.speechVoices().forEach { voice in
-            print(voice)
-        }
+        setupInit()
     }
     init(wordProvider: WordProvider) {
         self.wordProvider = wordProvider
         super.init()
+        setupInit()
+    }
+    func setupInit(){
         synthesizer.delegate = self
         AVSpeechSynthesisVoice.speechVoices().forEach { voice in
             print(voice)
@@ -54,8 +55,12 @@ class Player: NSObject, AVSpeechSynthesizerDelegate{
     }
     
     func findWords(criteria: WordCriteria){
-        words = wordProvider.findWords(criteria: criteria)
-        updateWordListState()
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.words = self.wordProvider.findWords(criteria: criteria)
+            DispatchQueue.main.async {
+                self.updateWordListState()
+            }
+        }
     }
     func resetPlayerState() {
         playState.current = nil
@@ -74,7 +79,7 @@ class Player: NSObject, AVSpeechSynthesizerDelegate{
     }
     
     func speechDidFinish(didFinish: AVSpeechUtterance) {
-        if !playState.isStoped || playState.didFinish != didFinish{
+        if !playState.isStoped && playState.didFinish == didFinish{
             if !playState.plaingTranslation {
                 playState.plaingTranslation = true
                 speakTranslation()
@@ -95,7 +100,9 @@ class Player: NSObject, AVSpeechSynthesizerDelegate{
     }
     func stopAndPlayFromIndex(index: Int){
         stopSpeaking()
-        playFromIndex(index: index)
+        DispatchQueue.main.async {
+            self.playFromIndex(index: index)
+        }
     }
     func nextWord(){
         stopAndPlayFromIndex(index: playState.index + 1)
@@ -132,8 +139,7 @@ class Player: NSObject, AVSpeechSynthesizerDelegate{
         if playState.isStoped {
             setIndex(index: playState.index)
             selectAndSpeekWord()
-        }
-        else{
+        } else {
             stopSpeaking()
         }
     }
@@ -148,6 +154,12 @@ class Player: NSObject, AVSpeechSynthesizerDelegate{
         // Tell the synthesizer to speak the utterance.
         synthesizer.speak(utterance)
     }
+    func toSpeechNoResult(language:String, text: String){
+        // Create an utterance.
+        let utterance = createUtteranceNoDelay(language: language, text: text)
+        // Tell the synthesizer to speak the utterance.
+        synthesizer.speak(utterance)
+    }
     func stopSpeaking(at: AVSpeechBoundary){
         synthesizer.stopSpeaking(at: at)
         playState.isStoped = true
@@ -155,13 +167,16 @@ class Player: NSObject, AVSpeechSynthesizerDelegate{
     
     func stopSpeaking(){
         if !playState.isStoped {
-            stopSpeaking(at: AVSpeechBoundary.immediate)
+            DispatchQueue.main.async {
+                self.stopSpeaking(at: AVSpeechBoundary.immediate)
+            }
         }
     }
     func createUtterance(language:String, text: String) -> AVSpeechUtterance {
         let preUtteranceDelay = playState.plaingTranslation ? settings.translationDelayBefore : settings.generalDelayBefore
         let postUtteranceDelay = playState.plaingTranslation ? 0.1 : Double(settings.generalDelayAfterPerLetter) / 1000 * Double(text.count)
-        return createUtterance(language: language, text: text, preUtteranceDelay: Double(preUtteranceDelay) / 1000, postUtteranceDelay: postUtteranceDelay)
+        //        return createUtterance(language: language, text: text, preUtteranceDelay: Double(preUtteranceDelay) / 1000, postUtteranceDelay: postUtteranceDelay)
+        return createUtterance(language: language, text: text, preUtteranceDelay: 0.0, postUtteranceDelay: 0.0)
     }
     func createUtteranceNoDelay(language:String, text: String) -> AVSpeechUtterance {
         return createUtterance(language: language, text: text, preUtteranceDelay: 0.0, postUtteranceDelay: 0.0)
@@ -178,7 +193,6 @@ class Player: NSObject, AVSpeechSynthesizerDelegate{
         utterance.pitchMultiplier = Float(settings.speechPitch)
         // utterance.volume = 0.8
         
-        
         // Retrieve the voice.
         let voice = voiceRetriever.voiceForLanguage(language: language)
         
@@ -187,9 +201,9 @@ class Player: NSObject, AVSpeechSynthesizerDelegate{
         return utterance
     }
 }
-class PlayingState{
-    var index: Int = settings.currentIndex
-    var isStoped: Bool = true
+class PlayingState : ObservableObject {
+    @Published var index: Int = settings.currentIndex
+    @Published var isStoped: Bool = true
     var current: Word?
     var repetition: Int = 1
     var plaingTranslation: Bool = false
@@ -197,7 +211,7 @@ class PlayingState{
 }
 class VoiceRetriever {
     var voices = settings.currentVoices
-//    : [String: String] = ["de":"com.apple.ttsbundle.Anna-compact","en":"com.apple.ttsbundle.Daniel-compact"]
+    //    : [String: String] = ["de":"com.apple.ttsbundle.Anna-compact","en":"com.apple.ttsbundle.Daniel-compact"]
     func voiceForLanguage (language: String) -> AVSpeechSynthesisVoice {
         if let voiceIdentifier = voices[language] {
             return AVSpeechSynthesisVoice(identifier: voiceIdentifier)!

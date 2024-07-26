@@ -20,15 +20,18 @@ struct FilterView: View {
     var player : Player
     
     var body: some View {
-        VStack {
-            Button(action: {
-                player.findWords(criteria: criteriaObject.criteria)
-            }, label: {
-                Label("filter", systemImage: "magnifyingglass")
-                Spacer()
-            })
-                .buttonStyle(.bordered)
-                .controlSize(.regular)
+//        VStack {
+//            Button(action: {
+//                player.findWords(criteria: criteriaObject.criteria)
+//            }, label: {
+//                Spacer()
+//                Label("filter", systemImage: "magnifyingglass")
+//                Spacer()
+//            })
+//                .buttonStyle(.bordered)
+//                .controlSize(.regular)
+//                .padding([.leading, .trailing])
+//
             List {
                 if languagesFrom.count > 1 {
                     StringsView(selection: $language, values: $languagesFrom, title: "Language from")
@@ -45,32 +48,36 @@ struct FilterView: View {
             }
             .listStyle(.plain)
             .onAppear {
-                languagesFrom = databaseManager.languageFrom()
-                languagesTo = databaseManager.languageTo(language: language)
-                rootTopics = databaseManager.findRootTopics(language: language)
-                topics = databaseManager.getTopics(language: language, rootId: rootTopic != nil ? rootTopic!.id : nil, level: 2)
+                languagesFrom = databaseWordProvider.languageFrom()
+                languagesTo = databaseWordProvider.languageTo(language: language)
+                rootTopics = databaseWordProvider.findRootTopics(language: language)
+                topics = databaseWordProvider.findTopicsWithRoot(language: language, rootId: rootTopic != nil ? rootTopic!.id : nil, level: 2)
             }
             .onChange(of: language, perform: {_ in
-                languagesTo = databaseManager.languageTo(language: language)
-                rootTopics = databaseManager.findRootTopics(language: language)
-                topics = databaseManager.getTopics(language: language, rootId: nil, level: 2)
+                languagesTo = databaseWordProvider.languageTo(language: language)
+                rootTopics = databaseWordProvider.findRootTopics(language: language)
+                topics = databaseWordProvider.findTopics(language: language, level: 2)
                 criteriaObject.criteria.languageFrom = language
+                settings.currentCriteria = criteriaObject.criteria
             })
             .onChange(of: rootTopic, perform: {_ in
-                topics = databaseManager.getTopics(language: language, rootId: rootTopic != nil ? rootTopic!.id : nil, level: 2)
+                topics = databaseWordProvider.findTopicsWithRoot(language: language, rootId: rootTopic != nil ? rootTopic!.id : nil, level: 2)
                 criteriaObject.criteria.rootTopic = rootTopic != nil ? rootTopic!.id : nil
+                settings.currentCriteria = criteriaObject.criteria
             })
             .onChange(of: languagesToSelected, perform: {l in
                 criteriaObject.criteria.languageTo = l != nil ? [l!] : nil
+                settings.currentCriteria = criteriaObject.criteria
             })
             .onChange(of: topicsSelected, perform: {t in
                 criteriaObject.criteria.topicsOr = t != nil ? [t!.id!] : []
+                settings.currentCriteria = criteriaObject.criteria
             })
-        }
+//        }
     }
 }
 class CriteriaHolder: ObservableObject {
-    @Published var criteria = WordCriteria()
+    @Published var criteria = settings.currentCriteria
 }
 
 struct TopicsView: View {
@@ -95,7 +102,7 @@ struct TopicsView: View {
                 .buttonStyle(.bordered)
                 .controlSize(.regular)
             if !topics.isEmpty {
-                SearchTopicsView(searchPart: $searchPart, selection: $selection, topics: $topics)
+                SearchTopicsView(searchPart: $searchPart, filteredTopics: topics, selection: $selection, topics: $topics)
             }
         }
     }
@@ -104,26 +111,29 @@ let showFilterForRowsMoreThan = 5
 struct SearchTopicsView: View {
     @Binding var searchPart: String;
     
-    @State var filteredTopics: [Topic] = []
-    @Binding var selection: Topic?;
+    @State var filteredTopics: [Topic]
+    @Binding var selection: Topic?
     
     @Binding var topics: [Topic]
+    var createAction: (() -> Void)?
     
     var body: some View {
-        if topics.count > showFilterForRowsMoreThan {
-        TextField("Search", text: $searchPart)
-            .textFieldStyle(.roundedBorder)
-            .onChange(of: searchPart, perform: {searchPart in
-                filteredTopics = searchPart.isEmpty ? topics : topics.filter({$0.name.localizedStandardContains(searchPart)})
-            })
-            .onAppear(perform: {
-                filteredTopics = topics
-            })
-            .onChange(of: topics, perform: {topics in
-                filteredTopics = topics
-                selection = nil
-                searchPart = ""
-            })
+        if topics.count > showFilterForRowsMoreThan || createAction != nil {
+            HStack {
+                TextField("Search", text: $searchPart)
+                    .textFieldStyle(.roundedBorder)
+                    .autocapitalization(.none)
+                    .onChange(of: searchPart, perform: {searchPart in
+                        filteredTopics = searchPart.isEmpty ? topics : topics.filter({$0.name.localizedStandardContains(searchPart)})
+                    })
+                if createAction != nil && !searchPart.isEmpty {
+                    Button(action: {
+                        createAction!()
+                    }, label: {
+                        Image(systemName: "plus")
+                    }).buttonStyle(.bordered)
+                }
+            }
         }
         ForEach(filteredTopics, id: \.name) {topic in
             Button(action: {
@@ -133,6 +143,11 @@ struct SearchTopicsView: View {
             })
                 .listRowBackground(selection == topic ? selectedBackground() : nil)
         }
+        .onChange(of: topics, perform: {topics in
+            filteredTopics = topics
+            selection = nil
+            searchPart = ""
+        })
     }
 }
 func selectedBackground() -> some View {

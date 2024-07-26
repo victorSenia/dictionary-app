@@ -8,65 +8,63 @@
 import Foundation
 import SwiftUI
 
-
+struct EditWordViewOrEmpty: View {
+    @State var word: Word?
+    var body: some View {
+        if word != nil {
+            EditWordView(word: word!, language: word!.language)
+        }
+        else {
+            EmptyView()
+        }
+    }
+}
 struct EditWordView: View {
-    @ObservedObject var wordToEdit: WordState
-    @StateObject var topicState = TopicState()
+    
+    @Environment(\.presentationMode) var presentationMode
     @State var word: Word
     @State var language: String
-    init(wordToEdit: WordState){
-        self.wordToEdit = wordToEdit
-        word = wordToEdit.word!
-        language = wordToEdit.word!.language
-    }
     
+    @State var topicToEdit: Topic?
+    @State private var action: NavigationLinkType?
     var body: some View {
-        if topicState.topic != nil {
-            EditTopicView(topicToEdit: topicState, topic: topicState.topic!)
-        } else {
-            HStack {
-                Button {
-                    wordToEdit.word = nil
-                } label: {
-                    Label("Back", systemImage: "chevron.left")
-                }.buttonStyle(.bordered)
-                Spacer()
-                
-                Button {
-                    wordToEdit.word = nil
-                    databaseManager.updateWord(word: word)
-                } label: {
-                    Label("Save", systemImage: "checkmark.circle")
-                }.buttonStyle(.bordered)
-            }
-            List {
-                Section(header: Text("Word")) {
-                    HStack {
-                        TextField("language", text: $language)
+        NavigationLink(destination: EditTopicViewOrEmpty(topicToEdit: $topicToEdit), tag: .topic, selection: $action) {
+            EmptyView()
+        }
+        List {
+            Section(header: Text("Word")) {
+                HStack {
+                    TextField("language", text: $language)
+                        .textFieldStyle(.roundedBorder)
+                        .frame(width: 40, alignment: .leading)
+                        .autocapitalization(.none)
+                    VStack{
+                        TextField("article", text: $word.article)
                             .textFieldStyle(.roundedBorder)
-                            .frame(width: 40, height: nil, alignment: .leading)
                             .autocapitalization(.none)
-                        VStack{
-                            TextField("article", text: $word.article)
-                                .textFieldStyle(.roundedBorder)
-                                .autocapitalization(.none)
-                            TextField("word", text: $word.word)
-                                .textFieldStyle(.roundedBorder)
-                                .autocapitalization(.none)
-                            TextField("additionalInformation", text: $word.additionalInformation)
-                                .textFieldStyle(.roundedBorder)
-                                .autocapitalization(.none)
-                        }
+                        TextField("word", text: $word.word)
+                            .textFieldStyle(.roundedBorder)
+                            .autocapitalization(.none)
+                        TextField("additionalInformation", text: $word.additionalInformation)
+                            .textFieldStyle(.roundedBorder)
+                            .autocapitalization(.none)
                     }
                 }
-                EditTranslationsView(translations: $word.translations, translationsCount: $word.translations.count)
-                EditTopicsView(topicToEdit: topicState, topics: $word.topics, language: $language, topicsCount: $word.topics.count)
             }
-            .listStyle(.plain)
-            .onChange(of: language, perform: {language in
-                word.language = language
-            })
+            EditTranslationsView(translations: $word.translations, translationsCount: $word.translations.count)
+            EditTopicsView(topics: $word.topics, language: $language, topicsCount: $word.topics.count, topicToEdit: $topicToEdit, action: $action)
         }
+        .listStyle(.plain)
+        .onChange(of: language, perform: {language in
+            word.language = language
+        })
+        .navigationBarTitle("Word", displayMode: .inline)
+        .navigationBarItems(trailing: Button {
+            databaseWordProvider.updateWordFully(updatedWord: word)
+            presentationMode.wrappedValue.dismiss()
+        } label: {
+            Label("Save", systemImage: "checkmark.circle")
+        })
     }
 }
 
@@ -77,7 +75,7 @@ struct EditTranslationView: View {
         HStack {
             TextField("Language", text: $translation.language)
                 .textFieldStyle(.roundedBorder)
-                .frame(width: 40, height: nil, alignment: .leading)
+                .frame(width: 40, alignment: .leading)
                 .autocapitalization(.none)
             TextField("Translation", text: $translation.translation)
                 .textFieldStyle(.roundedBorder)
@@ -114,16 +112,29 @@ struct EditTranslationsView: View {
     }
 }
 
+
+struct EditTopicViewOrEmpty: View {
+    @State var topicToEdit: Binding<Topic?>
+    
+    var body: some View {
+        if topicToEdit.wrappedValue != nil {
+            EditTopicView(topic: topicToEdit.wrappedValue!, rootTopic: topicToEdit.wrappedValue!.root)
+        }
+        else {
+            EmptyView()
+        }
+    }
+}
 struct EditTopicsView: View {
-    @ObservedObject var topicToEdit: TopicState
     @Binding var topics: [Topic]
     @Binding var language: String
     @State var topicsCount: Int
     @State var searchPart = ""
-    
     @State var topicsForLanguage: [Topic] = [];
     
-    @State var topicsSelected: Topic?;
+    @State var topicSelected: Topic?
+    var topicToEdit: Binding<Topic?>
+    var action: Binding<NavigationLinkType?>
     var body: some View {
         Section(header: Text("Topics")) {
             ForEach(0..<topicsCount, id: \.self) {index in
@@ -133,15 +144,16 @@ struct EditTopicsView: View {
                             Button(role: .destructive) {
                                 topics.remove(at: index)
                                 topicsCount -= 1
-                                print("Deleting topic")
+                                NSLog("Deleting topic")
                             } label: {
                                 Label("Delete", systemImage: "trash.fill")
                             }
                         }
                         .swipeActions(edge: .leading, allowsFullSwipe: false) {
                             Button {
-//                                topicToEdit.topic = topics[index]
-                                print("Editing topic")
+                                NSLog("Editing topic")
+                                topicToEdit.wrappedValue = topics[index]
+                                action.wrappedValue = .topic
                             } label: {
                                 Label("Edit", systemImage: "square.and.pencil")
                             }
@@ -152,21 +164,21 @@ struct EditTopicsView: View {
                     Button {
                         topics.remove(at: index)
                         topicsCount -= 1
-                        print("Deleting topic")
+                        NSLog("Deleting topic")
                     } label: {
                         Label("Delete", systemImage: "trash.fill")
                     }
                     Button {
-//                        topicToEdit.topic = topics[index]
-                        print("Editing topic")
+                        NSLog("Editing topic")
                     } label: {
                         Label("Edit", systemImage: "square.and.pencil")
                     }
                 }
             }
-            if !topicsForLanguage.isEmpty {
-                SearchTopicsView(searchPart: $searchPart, selection: $topicsSelected, topics: $topicsForLanguage)
-            }
+            SearchTopicsView(searchPart: $searchPart, filteredTopics: topicsForLanguage, selection: $topicSelected, topics: $topicsForLanguage, createAction: {
+                topicToEdit.wrappedValue = Topic(name: searchPart, language: language, level: 2)
+                action.wrappedValue = .topic
+            })
         }
         .onAppear {
             topicsForLanguage = getTopicsForLanguage()
@@ -179,101 +191,105 @@ struct EditTopicsView: View {
         .onChange(of: topics, perform: {_ in
             topicsForLanguage = getTopicsForLanguage()
         })
-        .onChange(of: topicsSelected, perform: {topic in
+        .onChange(of: topicSelected, perform: {topic in
             if topic != nil {
                 topics.append(topic!)
                 topicsCount += 1
-                topicsSelected = nil
+                topicSelected = nil
             }
         })
     }
     func getTopicsForLanguage() -> [Topic] {
-        return databaseWordProvider._databaseManager.getTopics(language: language, rootId: nil, level: 2).filter({t in
+        return databaseWordProvider.findTopics(language: language, level: 2).filter({t in
             !topics.contains(t)
         })
     }
 }
 
-class TopicState: ObservableObject {
-    @Published var topic : Topic? = nil
-}
 struct EditTopicView: View {
-    @ObservedObject var topicToEdit: TopicState
-    @StateObject var topicState = TopicState()
+    @Environment(\.presentationMode) var presentationMode
     @State var topic: Topic
+    @State var rootTopic: Topic?
     
     @State var topicsForLanguage: [Topic] = [];
     
     @State var topicSelected: Topic?;
     @State var searchPart: String = "";
+    @State var topicToEdit: Topic?
+    @State var action: NavigationLinkType?
     var body: some View {
-        if topicState.topic != nil {
-            EditTopicView(topicToEdit: topicState, topic: topicState.topic!)
+        NavigationLink(destination: EditTopicViewOrEmpty(topicToEdit: $topicToEdit), tag: .rootTopic, selection: $action) {
+            EmptyView()
         }
-        else{
-            HStack {
-                Button {
-                    topicToEdit.topic = nil
-                } label: {
-                    Label("Back", systemImage: "chevron.left")
-                }.buttonStyle(.bordered)
-                Spacer()
-                
-                Button {
-                    topicToEdit.topic = nil
-                } label: {
-                    Label("Save", systemImage: "checkmark.circle")
-                }.buttonStyle(.bordered)
-            }
-            List {
-                TextField("name", text: $topic.name)
-                    .textFieldStyle(.roundedBorder)
-                    .autocapitalization(.none)
-                if topic.level > 1 {
-                    Section(header: Text("Topics")) {
-                        if let rootTopic = topic.root {
-                            if #available(macOS 12.0, *) {
-                                Text(rootTopic.name)
-                                    .swipeActions(edge: .leading, allowsFullSwipe: false) {
-                                        Button {
-                                            topicState.topic = rootTopic
-                                            print("Editing topic")
-                                        } label: {
-                                            Label("Edit", systemImage: "square.and.pencil")
-                                        }
-                                        .tint(.green)
-                                    }
-                            } else {
-                                Text(rootTopic.name)
+        List {
+            TextField("name", text: $topic.name)
+                .textFieldStyle(.roundedBorder)
+                .autocapitalization(.none)
+                .onAppear {
+                    topicsForLanguage = getRootTopicsForLanguage()
+                }
+                .onChange(of: topicSelected, perform: {t in
+                    if t != nil {
+                        rootTopic = t
+                        topicSelected = nil
+                    }
+                })
+                .onChange(of: rootTopic, perform: {t in
+                    topic.root = t
+                    topicsForLanguage = getRootTopicsForLanguage()
+                })
+            if topic.level > 1 {
+                if rootTopic != nil {
+                    if #available(macOS 12.0, *) {
+                        Text(rootTopic!.name)
+                            .swipeActions(edge: .leading, allowsFullSwipe: false) {
                                 Button {
-                                    topicState.topic = rootTopic
-                                    print("Editing topic")
+                                    topicToEdit = rootTopic!
+                                    action = .rootTopic
+                                    NSLog("Editing topic")
                                 } label: {
                                     Label("Edit", systemImage: "square.and.pencil")
                                 }
+                                .tint(.green)
                             }
-                        }
-                        if !topicsForLanguage.isEmpty {
-                            SearchTopicsView(searchPart: $searchPart, selection: $topicSelected, topics: $topicsForLanguage)
+                            .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                                Button (role: .destructive){
+                                    rootTopic = nil
+                                    NSLog("Deleted root topic")
+                                } label: {
+                                    Label("Delete", systemImage: "trash.fill")
+                                }
+                            }
+                    } else {
+                        Text(rootTopic!.name)
+                        Button {
+                            topicToEdit = rootTopic!
+                            action = .rootTopic
+                            NSLog("Editing topic")
+                        } label: {
+                            Label("Edit", systemImage: "square.and.pencil")
                         }
                     }
-                    .onAppear {
-                        topicsForLanguage = getRootTopicsForLanguage()
-                    }
-                    .onChange(of: topicSelected, perform: {t in
-                        if t != nil {
-                            topic.root = t
-                            topicSelected = nil
-                            topicsForLanguage = getRootTopicsForLanguage()
-                        }
+                }
+                Section (header: Text("Root topics")){
+                    SearchTopicsView(searchPart: $searchPart, filteredTopics: topicsForLanguage, selection: $topicSelected, topics: $topicsForLanguage, createAction: {
+                        topicToEdit = Topic(name: searchPart, language: topic.language, level: 1)
+                        action = .rootTopic
                     })
                 }
-            }.listStyle(.plain)
-        }
+            }
+        }.listStyle(.plain)
+            .navigationBarTitle(topic.level > 1 ? "Topic" : "Root topic", displayMode: .inline)
+            .navigationBarItems(trailing: Button {
+                databaseWordProvider.updateTopic(topic: &topic)
+                presentationMode.wrappedValue.dismiss()
+            } label: {
+                Label("Save", systemImage: "checkmark.circle")
+            })
     }
     func getRootTopicsForLanguage() -> [Topic] {
-        return databaseWordProvider._databaseManager.getTopics(language: topic.language, rootId: nil, level: 1).filter({t in
-            topic.root != t
+        return databaseWordProvider.findRootTopics(language: topic.language).filter({t in
+            rootTopic != t
         })
     }
 }

@@ -36,10 +36,10 @@ class DatabaseHelper{
     // Create DB
     func openDatabase()->OpaquePointer?{
         let filePath = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(dataPath)
-        print(filePath)
+        NSLog(filePath.absoluteString)
         var db: OpaquePointer? = nil
         if sqlite3_open(filePath.path, &db) != SQLITE_OK{
-            debugPrint("Cannot open DB.")
+            NSLog("Cannot open DB.")
             return nil
         }
         else{
@@ -57,10 +57,10 @@ class DatabaseHelper{
             if sqlite3_step(executeStatement) == SQLITE_DONE {
                 // print("Sql executed successfully.")
             } else {
-                print("SQL failed." + sql)
+                NSLog("SQL failed." + sql)
             }
         } else {
-            print("SQL failed." + sql)
+            NSLog("SQL failed." + sql)
         }
         
         sqlite3_finalize(executeStatement)
@@ -131,11 +131,11 @@ class DatabaseHelper{
                 sqlite3_finalize(insertStatement)
                 return 0
             } else {
-                print("Could not add.")
+                NSLog("Could not add.")
                 return -1
             }
         } else {
-            print("INSERT statement is failed.")
+            NSLog("INSERT statement is failed.")
             return -1
         }
     }
@@ -150,11 +150,11 @@ class DatabaseHelper{
                 sqlite3_finalize(insertStatement)
                 return true
             } else {
-                print("Could not update.")
+                NSLog("Could not update.")
                 return false
             }
         } else {
-            print("UPDATE statement is failed.")
+            NSLog("UPDATE statement is failed.")
             return false
         }
     }
@@ -168,11 +168,11 @@ class DatabaseHelper{
                 sqlite3_finalize(deleteStatement)
                 return true
             } else {
-                print("Could not delete.")
+                NSLog("Could not delete.")
                 return false
             }
         } else {
-            print("DELETE statement is failed.")
+            NSLog("DELETE statement is failed.")
             return false
         }
     }
@@ -189,7 +189,7 @@ class DatabaseHelper{
                 }
             }
         } else {
-            print("SELECT statement is failed.")
+            NSLog("SELECT statement is failed.")
         }
         sqlite3_finalize(queryStatement)
     }

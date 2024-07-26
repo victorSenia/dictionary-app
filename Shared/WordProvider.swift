@@ -20,7 +20,7 @@ class DatabaseWordProvider: WordProvider{
     func importWords(words: [Word]){
         for fromIndex in stride(from: 0, through: words.count, by: CHUNK_SIZE) {
             importWordsChunk( words: words[fromIndex..<min(words.count, fromIndex + CHUNK_SIZE)])
-            print("imported from " + String(fromIndex) + " to " + String(min(words.count, fromIndex + CHUNK_SIZE)))
+            NSLog("imported from " + String(fromIndex) + " to " + String(min(words.count, fromIndex + CHUNK_SIZE)))
         }
     }
     func importWordsChunk(words: ArraySlice<Word>){
@@ -33,6 +33,159 @@ class DatabaseWordProvider: WordProvider{
                 _databaseManager.insertFully(word: words[index])
             }
         })
+    }
+    func deleteForLanguage(language: String){
+        _databaseManager.executeInTransaction(action: {
+            _databaseManager.deleteForLanguage(language: language)
+        })
+        _databaseManager.vacuum()
+    }
+    func updateWordFully(updatedWord: Word){
+        _databaseManager.executeInTransaction(action: {
+            if updatedWord.id != nil {
+                let oldWord = _databaseManager.findWord(id: updatedWord.id!);
+                if (oldWord != nil) {
+                    updateWord(updatedWord: updatedWord, oldWord: oldWord!);
+                } else {
+                    _databaseManager.insertFully(word: updatedWord);
+                }
+            } else {
+                _databaseManager.insertFully(word: updatedWord)
+            }
+        })
+    }
+    func updateTopic(topic: inout Topic){
+        _databaseManager.executeInTransaction(action: {
+            if topic.id != nil {
+                _databaseManager.updateTopic(topic: topic)
+            } else {
+                _databaseManager.insertTopic(topic: &topic)
+            }
+        })
+    }
+    
+    
+    private func findTranslationById(word: Word, id: Int64) -> Translation? {
+        for  translation in word.translations {
+            if (translation.id == id) {
+                return translation;
+            }
+        }
+        return nil;
+    }
+    
+    private func findTopicById(word: Word, id: Int64) -> Topic? {
+        for topic in word.topics {
+            if topic.id == id {
+                return topic;
+            }
+        }
+        return nil;
+    }
+    
+    public func findTopics(language: String?, level: Int32) -> [Topic] {
+        return _databaseManager.getTopics(language: language, rootId: nil, level: level);
+    }
+    
+    public func findTopicsWithRoot(language: String?, rootId: Int64?, level: Int32) -> [Topic] {
+        return _databaseManager.getTopics(language: language, rootId: rootId, level: level);
+    }
+    
+    public func findRootTopics(language: String?) -> [Topic]{
+        return _databaseManager.findRootTopics(language: language);
+    }
+    
+    public func languageFrom() -> [String] {
+        return _databaseManager.languageFrom();
+    }
+    
+    public func languageTo(language: String?) -> [String] {
+        return _databaseManager.languageTo(language: language);
+    }
+    
+    
+    public func updateWord(updatedWord: Word) {
+        _databaseManager.updateWord(word: updatedWord);
+    }
+    
+    public func updateTopic(topic: Topic) {
+        _databaseManager.updateTopic(topic: topic);
+    }
+    
+    
+    private func updateWord(updatedWord: Word, oldWord: Word) -> Word {
+        if (oldWord != updatedWord) {
+            _databaseManager.updateWord(word: updatedWord);
+        }
+        for translationIndex in updatedWord.translations.indices {
+            var translation = updatedWord.translations[translationIndex]
+            if (translation.id == nil) {
+                _databaseManager.insertTranslation(translation: &translation, wordId: updatedWord.id!);
+            } else if (translation != findTranslationById(word: oldWord, id: translation.id!)) {
+                _databaseManager.updateTranslation(translation: translation);
+            }
+        }
+        for translation in oldWord.translations {
+            if (findTranslationById(word: updatedWord, id: translation.id!) == nil) {
+                _databaseManager.deleteTranslation(id: translation.id!);
+            }
+        }
+        for topicIndex in updatedWord.topics.indices {
+            var topic = updatedWord.topics[topicIndex]
+            if (topic.id == nil) {
+                _databaseManager.insertWordTopicLink(wordId: updatedWord.id!, topicId: _databaseManager.insertTopic(topic: &topic));
+            } else if (findTranslationById(word: oldWord, id: topic.id!) == nil) {
+                _databaseManager.insertWordTopicLink(wordId: updatedWord.id!, topicId: topic.id!);
+            }
+        }
+        for topic in oldWord.topics {
+            if (findTopicById(word: updatedWord, id: topic.id!) == nil) {
+                _databaseManager.deleteWordTopicLink(wordId: updatedWord.id!, topicId: topic.id!);
+            }
+        }
+        return updatedWord;
+    }
+    
+    
+    public func findWord(id: Int64) -> Word? {
+        return _databaseManager.findWord(id: id);
+    }
+    
+    public func getWordsForLanguage(language: String, rootTopic: Int64?) -> [Word] {
+        return _databaseManager.findWordsForLanguage(language: language, rootId: rootTopic);
+    }
+    
+    
+    public func deleteWord(id: Int64) {
+        _databaseManager.executeInTransaction(action: {
+            _databaseManager.deleteWord(id: id)
+        });
+    }
+    
+    public func insertConfigurationPreset(name: String, data: [String:AnyObject]) {
+        _databaseManager.executeInTransaction(action: {
+            _databaseManager.insertConfigurationPreset(name: name, data: data)
+        });
+    }
+    
+    public func updateConfigurationPreset(name: String, data: [String:AnyObject]) {
+        _databaseManager.executeInTransaction(action: {
+            _databaseManager.updateConfigurationPreset(name: name, data: data)
+        });
+    }
+    
+    public func deleteConfigurationPreset(name: String) {
+        _databaseManager.executeInTransaction(action: {
+            _databaseManager.deleteConfigurationPreset(name: name)
+        });
+    }
+    
+    public func getConfigurationPresetNames() -> [String] {
+        return _databaseManager.getConfigurationPresetNames();
+    }
+    
+    public func getConfigurationPreset(name: String) -> [String:AnyObject]? {
+        return _databaseManager.getConfigurationPreset(name: name);
     }
 }
 class ParseConfig {
@@ -50,6 +203,7 @@ class FileWordProvider: WordProvider{
     var parseConfig = ParseConfig()
     var words: [Word] = []
     var rootTopic: Topic? = nil
+    var fileName: String = "German_most_used.txt"
     
     func findWords(criteria: WordCriteria) -> [Word]{
         if words.count == 0 {
@@ -58,7 +212,7 @@ class FileWordProvider: WordProvider{
         return words
     }
     func parseWords(){
-        let lines = readString(fileName: "German_most_used.txt").split(separator: "\r\n")
+        let lines = readString(fileName: fileName).split(separator: "\r\n")
         words.removeAll()
         var topics: [Topic] = []
         lines.forEach { line in
@@ -75,17 +229,32 @@ class FileWordProvider: WordProvider{
                 } else {
                     let wordArray = line.split(separator: parseConfig.separator)
                     if wordArray.count == parseConfig.toLanguage.count + 1 {
-                        let word = Word(word: String(wordArray[0].trimmingCharacters(in: .whitespaces)), language: parseConfig.fromLanguage)
-                        word.translations = parseTranslation(parts: wordArray)
-                        word.topics = topics
-                        words.append(word)
+                        var word = Word(word: String(wordArray[0].trimmingCharacters(in: .whitespaces)), language: parseConfig.fromLanguage)
+                        if let indexOf = words.firstIndex(of: word){
+                            word = words[indexOf]
+                            let translations = parseTranslation(parts: wordArray)
+                            for translation in translations {
+                                if !word.translations.contains(translation){
+                                    word.translations.append(translation)
+                                }
+                            }
+                            for topic in topics {
+                                if !word.topics.contains(topic){
+                                    word.topics.append(topic)
+                                }
+                            }
+                        }
+                        else {
+                            word.translations = parseTranslation(parts: wordArray)
+                            word.topics = topics
+                            words.append(word)}
                     }
                 }
             }
         }
     }
     // let configPrefix = "org.leo.dictionary.config.entity.ParseWords:de:en; uk:die+; das+; der+:%5C%7C:%3B:%3B:%5Ct:"
-    fileprivate func replaceRegexSymbols(_ a: String) -> String {
+    func replaceRegexSymbols(_ a: String) -> String {
         return a.replacingOccurrences(of: "\\\\", with: "\\", options: .regularExpression, range: nil)
     }
     
@@ -98,9 +267,9 @@ class FileWordProvider: WordProvider{
         parseConfig.additionalInfoSeparator = Array(replaceRegexSymbols(decode(string: String(parts[5]))))[0]
         parseConfig.translationSeparator = Array(replaceRegexSymbols(decode(string: String(parts[6]))))[0]
         parseConfig.topicFlag = decode(string: String(parts[7]))
-        parseConfig.rootName = decode(string: String(parts[9]))
-        if parts.count > 8 {
+        if parts.count > 9 {
             parseConfig.topicDelimiter = decode(string: String(parts[8]))
+            parseConfig.rootName = decode(string: String(parts[9]))
         }
     }
     func isTopicLine(line:Substring) -> Bool {
@@ -113,7 +282,7 @@ class FileWordProvider: WordProvider{
             name = name.replacingOccurrences(of: "^("+parseConfig.topicFlag + parseConfig.topicDelimiter+")", with:"", options: .regularExpression)
             level += 1
         }
-        var topic = Topic(name: name, language: parseConfig.fromLanguage, level: level)
+        let topic = Topic(name: name, language: parseConfig.fromLanguage, level: level)
         topic.root = rootTopic
         return topic
     }
@@ -140,7 +309,7 @@ class FileWordProvider: WordProvider{
                 return stringContent
             }
         } catch {
-            print(error)
+            NSLog(error.localizedDescription)
         }
         return ""
     }
@@ -158,7 +327,7 @@ class FileWordProvider: WordProvider{
                 print("End at here-----")
             }
         } catch {
-            print(error)
+            NSLog(error.localizedDescription)
         }
     }
 }
@@ -166,5 +335,5 @@ func encode(string: String) -> String {
     return string.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
 }
 func decode(string: String) -> String {
-    return string.removingPercentEncoding!
+    return string.removingPercentEncoding!.replacingOccurrences(of: "+", with: " ")
 }
