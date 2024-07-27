@@ -8,30 +8,19 @@
 import SwiftUI
 
 struct FilterView: View {
-    @ObservedObject var criteriaObject: CriteriaHolder;
-    @State var language: String?;
-    @State var rootTopic: Topic?;
+    @ObservedObject var _criteriaHolder = criteriaHolder;
+    @State var language: String? = criteriaHolder.criteria.languageFrom
+    @State var rootTopic: Int64? = criteriaHolder.criteria.rootTopic
+    @State var languagesToSelected: String? = criteriaHolder.criteria.languageTo != nil && !criteriaHolder.criteria.languageTo!.isEmpty ? criteriaHolder.criteria.languageTo![0] : nil
+    @State var topicsSelected: Int64? = criteriaHolder.criteria.topicsOr != nil && !criteriaHolder.criteria.topicsOr!.isEmpty ? criteriaHolder.criteria.topicsOr![0] : nil
     @State var languagesFrom: [String] = [];
     @State var languagesTo: [String] = [];
-    @State var languagesToSelected: String?;
-    @State var topicsSelected: Topic?;
     @State var rootTopics: [Topic] = [];
     @State var topics: [Topic] = [];
-    var player : Player
     
     var body: some View {
-//        VStack {
-//            Button(action: {
-//                player.findWords(criteria: criteriaObject.criteria)
-//            }, label: {
-//                Spacer()
-//                Label("filter", systemImage: "magnifyingglass")
-//                Spacer()
-//            })
-//                .buttonStyle(.bordered)
-//                .controlSize(.regular)
-//                .padding([.leading, .trailing])
-//
+        VStack{
+            Text("")
             List {
                 if languagesFrom.count > 1 {
                     StringsView(selection: $language, values: $languagesFrom, title: "Language from")
@@ -48,32 +37,32 @@ struct FilterView: View {
             }
             .listStyle(.plain)
             .onAppear {
-                languagesFrom = databaseWordProvider.languageFrom()
-                languagesTo = databaseWordProvider.languageTo(language: language)
-                rootTopics = databaseWordProvider.findRootTopics(language: language)
-                topics = databaseWordProvider.findTopicsWithRoot(language: language, rootId: rootTopic != nil ? rootTopic!.id : nil, level: 2)
+                languagesFrom = player.wordProvider.languageFrom()
+                languagesTo = player.wordProvider.languageTo(language: language)
+                rootTopics = player.wordProvider.findRootTopics(language: language)
+                topics = player.wordProvider.findTopicsWithRoot(language: language, rootId: rootTopic, level: 2)
             }
             .onChange(of: language, perform: {_ in
-                languagesTo = databaseWordProvider.languageTo(language: language)
-                rootTopics = databaseWordProvider.findRootTopics(language: language)
-                topics = databaseWordProvider.findTopics(language: language, level: 2)
-                criteriaObject.criteria.languageFrom = language
-                settings.currentCriteria = criteriaObject.criteria
+                languagesTo = player.wordProvider.languageTo(language: language)
+                rootTopics = player.wordProvider.findRootTopics(language: language)
+                topics = player.wordProvider.findTopics(language: language, level: 2)
+                _criteriaHolder.criteria.languageFrom = language
+                settings.currentCriteria = _criteriaHolder.criteria
             })
             .onChange(of: rootTopic, perform: {_ in
-                topics = databaseWordProvider.findTopicsWithRoot(language: language, rootId: rootTopic != nil ? rootTopic!.id : nil, level: 2)
-                criteriaObject.criteria.rootTopic = rootTopic != nil ? rootTopic!.id : nil
-                settings.currentCriteria = criteriaObject.criteria
+                topics = player.wordProvider.findTopicsWithRoot(language: language, rootId: rootTopic, level: 2)
+                _criteriaHolder.criteria.rootTopic = rootTopic
+                settings.currentCriteria = _criteriaHolder.criteria
             })
             .onChange(of: languagesToSelected, perform: {l in
-                criteriaObject.criteria.languageTo = l != nil ? [l!] : nil
-                settings.currentCriteria = criteriaObject.criteria
+                _criteriaHolder.criteria.languageTo = l != nil ? [l!] : nil
+                settings.currentCriteria = _criteriaHolder.criteria
             })
             .onChange(of: topicsSelected, perform: {t in
-                criteriaObject.criteria.topicsOr = t != nil ? [t!.id!] : []
-                settings.currentCriteria = criteriaObject.criteria
+                _criteriaHolder.criteria.topicsOr = t != nil ? [t!] : []
+                settings.currentCriteria = _criteriaHolder.criteria
             })
-//        }
+        }
     }
 }
 class CriteriaHolder: ObservableObject {
@@ -84,16 +73,16 @@ struct TopicsView: View {
     @State var searchPart = "";
     
     @State var filteredTopics: [Topic] = []
-    @Binding var selection: Topic?;
+    @Binding var selection: Int64?;
+    @State var selectedTopic: Topic?
     
     @Binding var topics: [Topic]
     var title: LocalizedStringKey
     
     var body: some View {
-        
         Section(header: Text(title)){
             Button(action: {
-                selection = nil
+                selectedTopic = nil
                 searchPart = ""
             }, label: {
                 Text("All topics")
@@ -102,9 +91,20 @@ struct TopicsView: View {
                 .buttonStyle(.bordered)
                 .controlSize(.regular)
             if !topics.isEmpty {
-                SearchTopicsView(searchPart: $searchPart, filteredTopics: topics, selection: $selection, topics: $topics)
+                SearchTopicsView(searchPart: $searchPart, filteredTopics: topics, selection: $selectedTopic, topics: $topics)
+                    .onChange(of: selectedTopic, perform: {t in
+                        selection = t != nil ? t!.id : nil
+                    })
             }
         }
+        .onAppear(perform: {
+            if selection != nil {
+                selectedTopic = topics.first(where: {t in t.id == selection})
+                if selectedTopic == nil {
+                    selection = nil
+                }
+            }
+        })
     }
 }
 let showFilterForRowsMoreThan = 5

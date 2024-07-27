@@ -21,7 +21,7 @@ class DatabaseHelper{
             return version
         }
         set { execSQL(sql: "PRAGMA user_version = \(newValue)") }
-            }
+    }
     init(){
         db = openDatabase()
         if ( userVersion < CURENT_VERSION){
@@ -114,7 +114,7 @@ class DatabaseHelper{
                 "CONSTRAINT fk_topic FOREIGN KEY (" + TRANSLATION_COLUMN_WORD_ID + ") REFERENCES " + TABLE_NAME_TRANSLATION + "(" + COLUMN_ID + ")," +
                 "CONSTRAINT fk_word FOREIGN KEY (" + COLUMN_ID + ") REFERENCES " + TABLE_NAME_WORD + "(" + COLUMN_ID + ")" +
                 ");");
-         execSQL(sql: "CREATE TABLE " + TABLE_NAME_CONFIGURATION_PRESET + " (" + COLUMN_ID + " TEXT PRIMARY KEY, " + CONFIGURATION_PRESET_DATA + " BLOB" + ");");
+        execSQL(sql: "CREATE TABLE " + TABLE_NAME_CONFIGURATION_PRESET + " (" + COLUMN_ID + " TEXT PRIMARY KEY, " + CONFIGURATION_PRESET_DATA + " BLOB" + ");");
         execSQL(sql: "CREATE UNIQUE INDEX " + TABLE_NAME_TOPIC + "_unique1 " + " ON " + TABLE_NAME_TOPIC + " (" + COLUMN_LANGUAGE + ", " + TOPIC_COLUMN_LEVEL + ", " + TOPIC_COLUMN_ROOT_ID + ", " + TOPIC_COLUMN_NAME + ");");
         execSQL(sql: "CREATE UNIQUE INDEX " + TABLE_NAME_WORD + "_unique1 " + " ON " + TABLE_NAME_WORD + " (" + COLUMN_LANGUAGE + ", " + WORD_COLUMN_WORD + ", " + WORD_COLUMN_ARTICLE + ", " + WORD_COLUMN_ADDITIONAL_INFORMATION + ");");
         execSQL(sql: "CREATE UNIQUE INDEX " + TABLE_NAME_TRANSLATION + "_unique1 " + " ON " + TABLE_NAME_TRANSLATION + " (" + TRANSLATION_COLUMN_WORD_ID + ", " + COLUMN_LANGUAGE + ", " + TRANSLATION_COLUMN_TRANSLATION + ");");

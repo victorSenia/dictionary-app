@@ -193,7 +193,6 @@ struct SpeechSettingsView: View {
 struct LabeledDoubleView: View {
     var value: Binding<Double>
     var key: LocalizedStringKey
-    // public init<F>(_ titleKey: LocalizedStringKey, value: Binding<F.FormatInput?>, format: F, prompt: Text? = nil) where F : ParseableFormatStyle, F.FormatOutput == String
     var body: some View {
         HStack{
             Text(key).layoutPriority(2)
@@ -324,9 +323,13 @@ struct SpeechRecognizerSettingsView: View {
                             settings.currentSpeechRecognition[language] = locale.identifier
                             settings.currentSpeechRecognition = settings.currentSpeechRecognition
                             selected = locale.identifier
-                            speechAnalyzer.getSupportsOnDeviceRecognition(identifier: selected!)
                         } label: {
-                            Text(locale.identifier)
+                            HStack{
+                                Text(locale.identifier)
+                                Spacer()
+                                Text("possible on device:")
+                                Text(speechAnalyzer.getSupportsOnDeviceRecognition(identifier: locale.identifier) ? "✅" : "🔴")
+                            }
                         }
                         .listRowBackground(locale.identifier == selected ? selectedBackground() : nil)
                     }

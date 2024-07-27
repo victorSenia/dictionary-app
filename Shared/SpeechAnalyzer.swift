@@ -129,15 +129,11 @@ final class SpeechAnalyzer: NSObject, ObservableObject, SFSpeechRecognizerDelega
         }
     }
     func getSupportedLocales() -> Set<Locale> {
-        //        for l in   SFSpeechRecognizer.supportedLocales(){
-        //            NSLog(l.identifier, " supports on device recognition ", SFSpeechRecognizer(locale: l)?.supportsOnDeviceRecognition == true)
-        //        }
         return SFSpeechRecognizer.supportedLocales()
     }
     
     func getSupportsOnDeviceRecognition(identifier: String) -> Bool {
         let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: identifier))
-        NSLog("Supports on device recognition: \(speechRecognizer?.supportsOnDeviceRecognition == true ? "✅" : "🔴")")
         return speechRecognizer?.supportsOnDeviceRecognition == true
     }
 }
@@ -146,14 +142,13 @@ struct SpeechRecognitionView: View {
     private enum Constans {
         static let recognizeButtonSide: CGFloat = 80
     }
-    
-    @ObservedObject var wordState = WordState()
+    @State var word : Word?
     @ObservedObject private var speechAnalyzer = SpeechAnalyzer()
     var body: some View {
         VStack {
             Spacer()
-            if wordState.word != nil {
-                DetailsView(wordState: wordState)
+            if word != nil {
+                DetailsView(word: word)
                 PlayerButton(action: playWord, systemName: "play.fill")
                     .padding()
             }
@@ -203,15 +198,15 @@ private extension SpeechRecognitionView {
     }
     
     func playWord() {
-        if let word = wordState.word {
+        if let word = word {
             player.toSpeech(language: word.language, text: word.word)
         }
     }
     func nextWord() {
-        wordState.word = player.words[Int.random(in: 0..<player.words.count)]
+        word = player.words[Int.random(in: 0..<player.words.count)]
     }
     func getIdentifier() -> String? {
-        if let word = wordState.word {
+        if let word = word {
             if let preset = settings.currentSpeechRecognition[word.language]{
                 return preset
             }

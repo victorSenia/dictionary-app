@@ -184,8 +184,8 @@ class DatabaseManager: DatabaseHelper {
               , statmentModifier: {insertStatement in
             sqlite3_bind_text(insertStatement, 1, (word.language as NSString).utf8String, -1, nil)
             sqlite3_bind_text(insertStatement, 2, (word.word as NSString).utf8String, -1, nil)
-                sqlite3_bind_text(insertStatement, 3, (word.article as NSString).utf8String, -1, nil)
-                sqlite3_bind_text(insertStatement, 4, (word.additionalInformation as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(insertStatement, 3, (word.article as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(insertStatement, 4, (word.additionalInformation as NSString).utf8String, -1, nil)
         })
     }
     

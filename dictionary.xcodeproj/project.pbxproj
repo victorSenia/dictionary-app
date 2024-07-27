@@ -13,6 +13,10 @@
 		D50A41612C3602360075E14E /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50A415F2C3602360075E14E /* FilterView.swift */; };
 		D5168B562C3891D50043C034 /* EditWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5168B552C3891D50043C034 /* EditWordView.swift */; };
 		D5168B572C3891D50043C034 /* EditWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5168B552C3891D50043C034 /* EditWordView.swift */; };
+		D517EE3A2C55189A00977726 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D517EE392C55189A00977726 /* PlayerView.swift */; };
+		D517EE3B2C55189A00977726 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D517EE392C55189A00977726 /* PlayerView.swift */; };
+		D517EE3D2C55191900977726 /* DatabaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D517EE3C2C55191900977726 /* DatabaseView.swift */; };
+		D517EE3E2C55191900977726 /* DatabaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D517EE3C2C55191900977726 /* DatabaseView.swift */; };
 		D54112DE2C2ACDFF002BC1C6 /* German_most_used.txt in Resources */ = {isa = PBXBuildFile; fileRef = D54112DD2C2ACDFF002BC1C6 /* German_most_used.txt */; };
 		D55B78E22C5150150084000F /* WordMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B78E12C5150150084000F /* WordMatcher.swift */; };
 		D55B78E32C5150150084000F /* WordMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B78E12C5150150084000F /* WordMatcher.swift */; };
@@ -64,6 +68,8 @@
 		D50A415C2C3578580075E14E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D50A415F2C3602360075E14E /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		D5168B552C3891D50043C034 /* EditWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWordView.swift; sourceTree = "<group>"; };
+		D517EE392C55189A00977726 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		D517EE3C2C55191900977726 /* DatabaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseView.swift; sourceTree = "<group>"; };
 		D54112DD2C2ACDFF002BC1C6 /* German_most_used.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = German_most_used.txt; sourceTree = "<group>"; };
 		D55B78E12C5150150084000F /* WordMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordMatcher.swift; sourceTree = "<group>"; };
 		D5707E592C3ADF520028879F /* WordModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordModels.swift; sourceTree = "<group>"; };
@@ -150,6 +156,8 @@
 				D5707E5F2C3AE0350028879F /* WordProvider.swift */,
 				D5A827BF2C4EC919001E872A /* SpeechAnalyzer.swift */,
 				D55B78E12C5150150084000F /* WordMatcher.swift */,
+				D517EE392C55189A00977726 /* PlayerView.swift */,
+				D517EE3C2C55191900977726 /* DatabaseView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -360,6 +368,8 @@
 				D5A827C02C4EC91A001E872A /* SpeechAnalyzer.swift in Sources */,
 				D5707E5A2C3ADF520028879F /* WordModels.swift in Sources */,
 				D5707E602C3AE0350028879F /* WordProvider.swift in Sources */,
+				D517EE3D2C55191900977726 /* DatabaseView.swift in Sources */,
+				D517EE3A2C55189A00977726 /* PlayerView.swift in Sources */,
 				D59D0A832C286C17002CEB8E /* ContentView.swift in Sources */,
 				D59D0A812C286C17002CEB8E /* DictionaryApp.swift in Sources */,
 				D50A41602C3602360075E14E /* FilterView.swift in Sources */,
@@ -379,6 +389,8 @@
 				D5A827C12C4EC91A001E872A /* SpeechAnalyzer.swift in Sources */,
 				D5707E5B2C3ADF520028879F /* WordModels.swift in Sources */,
 				D5707E612C3AE0350028879F /* WordProvider.swift in Sources */,
+				D517EE3E2C55191900977726 /* DatabaseView.swift in Sources */,
+				D517EE3B2C55189A00977726 /* PlayerView.swift in Sources */,
 				D59D0A842C286C17002CEB8E /* ContentView.swift in Sources */,
 				D59D0A822C286C17002CEB8E /* DictionaryApp.swift in Sources */,
 				D50A41612C3602360075E14E /* FilterView.swift in Sources */,

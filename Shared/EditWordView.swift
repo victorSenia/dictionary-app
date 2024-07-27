@@ -61,6 +61,7 @@ struct EditWordView: View {
         .navigationBarTitle("Word", displayMode: .inline)
         .navigationBarItems(trailing: Button {
             databaseWordProvider.updateWordFully(updatedWord: word)
+            player.findWords(criteria: criteriaHolder.criteria)
             presentationMode.wrappedValue.dismiss()
         } label: {
             Label("Save", systemImage: "checkmark.circle")
@@ -135,6 +136,16 @@ struct EditTopicsView: View {
     @State var topicSelected: Topic?
     var topicToEdit: Binding<Topic?>
     var action: Binding<NavigationLinkType?>
+    func editTopic(index: Int) {
+        topicToEdit.wrappedValue = topics[index]
+        action.wrappedValue = .topic
+    }
+    
+    func deleteTopic(index: Int) {
+        topics.remove(at: index)
+        topicsCount -= 1
+    }
+    
     var body: some View {
         Section(header: Text("Topics")) {
             ForEach(0..<topicsCount, id: \.self) {index in
@@ -142,18 +153,14 @@ struct EditTopicsView: View {
                     Text(topics[index].name)
                         .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                             Button(role: .destructive) {
-                                topics.remove(at: index)
-                                topicsCount -= 1
-                                NSLog("Deleting topic")
+                                deleteTopic(index: index)
                             } label: {
                                 Label("Delete", systemImage: "trash.fill")
                             }
                         }
                         .swipeActions(edge: .leading, allowsFullSwipe: false) {
                             Button {
-                                NSLog("Editing topic")
-                                topicToEdit.wrappedValue = topics[index]
-                                action.wrappedValue = .topic
+                                editTopic(index: index)
                             } label: {
                                 Label("Edit", systemImage: "square.and.pencil")
                             }
@@ -162,14 +169,12 @@ struct EditTopicsView: View {
                 } else {
                     Text(topics[index].name)
                     Button {
-                        topics.remove(at: index)
-                        topicsCount -= 1
-                        NSLog("Deleting topic")
+                        deleteTopic(index: index)
                     } label: {
                         Label("Delete", systemImage: "trash.fill")
                     }
                     Button {
-                        NSLog("Editing topic")
+                        editTopic(index: index)
                     } label: {
                         Label("Edit", systemImage: "square.and.pencil")
                     }
@@ -217,6 +222,11 @@ struct EditTopicView: View {
     @State var searchPart: String = "";
     @State var topicToEdit: Topic?
     @State var action: NavigationLinkType?
+    func editRootTopic() {
+        topicToEdit = rootTopic!
+        action = .rootTopic
+    }
+    
     var body: some View {
         NavigationLink(destination: EditTopicViewOrEmpty(topicToEdit: $topicToEdit), tag: .rootTopic, selection: $action) {
             EmptyView()
@@ -244,9 +254,7 @@ struct EditTopicView: View {
                         Text(rootTopic!.name)
                             .swipeActions(edge: .leading, allowsFullSwipe: false) {
                                 Button {
-                                    topicToEdit = rootTopic!
-                                    action = .rootTopic
-                                    NSLog("Editing topic")
+                                    editRootTopic()
                                 } label: {
                                     Label("Edit", systemImage: "square.and.pencil")
                                 }
@@ -255,7 +263,6 @@ struct EditTopicView: View {
                             .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                                 Button (role: .destructive){
                                     rootTopic = nil
-                                    NSLog("Deleted root topic")
                                 } label: {
                                     Label("Delete", systemImage: "trash.fill")
                                 }
@@ -263,11 +270,14 @@ struct EditTopicView: View {
                     } else {
                         Text(rootTopic!.name)
                         Button {
-                            topicToEdit = rootTopic!
-                            action = .rootTopic
-                            NSLog("Editing topic")
+                            editRootTopic()
                         } label: {
                             Label("Edit", systemImage: "square.and.pencil")
+                        }
+                        Button {
+                            rootTopic = nil
+                        } label: {
+                            Label("Delete", systemImage: "trash.fill")
                         }
                     }
                 }

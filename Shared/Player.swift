@@ -11,12 +11,11 @@ import SwiftUI
 
 protocol UiUpdater{
     func updateCurrentWordState(index: Int, word: Word)
-    func updateWordListState(wordList: [Word])
 }
 class Player: NSObject, ObservableObject, AVSpeechSynthesizerDelegate{
     var uiUpdater: UiUpdater?
     
-    var words:[Word] = []
+    @Published var words:[Word] = []
     // Create a speech synthesizer.
     let synthesizer = AVSpeechSynthesizer()
     let voiceRetriever = VoiceRetriever()
@@ -48,19 +47,11 @@ class Player: NSObject, ObservableObject, AVSpeechSynthesizerDelegate{
         }
         return index
     }
-    func updateWordListState() {
-        if let ui = uiUpdater {
-            ui.updateWordListState(wordList: words)
-        }
-    }
     
     func findWords(criteria: WordCriteria){
-        DispatchQueue.global(qos: .userInitiated).async {
-            self.words = self.wordProvider.findWords(criteria: criteria)
-            DispatchQueue.main.async {
-                self.updateWordListState()
-            }
-        }
+        words = []
+        words = wordProvider.findWords(criteria: criteria)
+        
     }
     func resetPlayerState() {
         playState.current = nil
@@ -211,7 +202,6 @@ class PlayingState : ObservableObject {
 }
 class VoiceRetriever {
     var voices = settings.currentVoices
-    //    : [String: String] = ["de":"com.apple.ttsbundle.Anna-compact","en":"com.apple.ttsbundle.Daniel-compact"]
     func voiceForLanguage (language: String) -> AVSpeechSynthesisVoice {
         if let voiceIdentifier = voices[language] {
             return AVSpeechSynthesisVoice(identifier: voiceIdentifier)!

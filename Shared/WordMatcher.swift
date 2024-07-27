@@ -54,7 +54,7 @@ struct ElementView: View {
         Button {
             action(wordMatcherElement)
         } label: {
-                Text(wordMatcherElement.type == .translation || settings.wordMatcherShowWord ? wordMatcherElement.text : "")
+            Text(wordMatcherElement.type == .translation || settings.wordMatcherShowWord ? wordMatcherElement.text : "")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .buttonStyle(.bordered)
@@ -65,8 +65,8 @@ struct ElementView: View {
 private extension WordMatcherView {
     func fillElements() {
         wordMatcherState.elements = [
-        [WordMatcherElement](repeating: WordMatcherElement(), count: settings.wordMatcherWordsQuantity),
-        [WordMatcherElement](repeating: WordMatcherElement(), count: settings.wordMatcherWordsQuantity)]
+            [WordMatcherElement](repeating: WordMatcherElement(), count: settings.wordMatcherWordsQuantity),
+            [WordMatcherElement](repeating: WordMatcherElement(), count: settings.wordMatcherWordsQuantity)]
         for i in 0..<settings.wordMatcherWordsQuantity {
             let word = player.words[Int.random(in: 0..<player.words.count)]
             wordMatcherState.elements[0][i] = WordMatcherElement(type: .word, text: word.word, language: word.language)

@@ -68,7 +68,11 @@ class Topic: Identifiable, Equatable {
     var level: Int32
     var root: Topic?
 }
-class WordCriteria: Decodable, Encodable {
+class WordCriteria: Decodable, Encodable, Equatable {
+    static func == (lhs: WordCriteria, rhs: WordCriteria) -> Bool {
+        return lhs.languageFrom == rhs.languageFrom && lhs.topicsOr == rhs.topicsOr && lhs.rootTopic == rhs.rootTopic && lhs.languageTo == rhs.languageTo
+    }
+    
     var languageFrom: String?
     var topicsOr: [Int64]?
     var rootTopic: Int64?

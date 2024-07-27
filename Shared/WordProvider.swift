@@ -9,6 +9,11 @@ import Foundation
 
 protocol WordProvider {
     func findWords(criteria: WordCriteria) -> [Word]
+    func languageFrom() -> [String]
+    func languageTo(language: String?) -> [String]
+    func findTopics(language: String?, level: Int32) -> [Topic]
+    func findTopicsWithRoot(language: String?, rootId: Int64?, level: Int32) -> [Topic]
+    func findRootTopics(language: String?) -> [Topic]
 }
 class DatabaseWordProvider: WordProvider{
     var _databaseManager = databaseManager
@@ -103,15 +108,11 @@ class DatabaseWordProvider: WordProvider{
         return _databaseManager.languageTo(language: language);
     }
     
-    
     public func updateWord(updatedWord: Word) {
-        _databaseManager.updateWord(word: updatedWord);
+        _databaseManager.executeInTransaction(action: {
+            _databaseManager.updateWord(word: updatedWord);
+        })
     }
-    
-    public func updateTopic(topic: Topic) {
-        _databaseManager.updateTopic(topic: topic);
-    }
-    
     
     private func updateWord(updatedWord: Word, oldWord: Word) -> Word {
         if (oldWord != updatedWord) {
@@ -199,6 +200,34 @@ class ParseConfig {
     var rootName:String = "German most used"
 }
 class FileWordProvider: WordProvider{
+    func findTopics(language: String?, level: Int32) -> [Topic] {
+        return findTopicsWithRoot(language: language, rootId: nil, level: level)
+    }
+    
+    func findTopicsWithRoot(language: String?, rootId: Int64?, level: Int32) -> [Topic] {
+        var topics: [Topic] = []
+        //        words.forEach({w in
+        //            w.topics.forEach({t in
+        //                if !topics.contains(t) {
+        //                    topics.append(t)
+        //                }
+        //            })
+        //        })
+        return topics
+    }
+    
+    func findRootTopics(language: String?) -> [Topic] {
+        return rootTopic != nil ? [rootTopic!] : []
+    }
+    
+    func languageFrom() -> [String] {
+        return [parseConfig.fromLanguage]
+    }
+    
+    func languageTo(language: String?) -> [String] {
+        return parseConfig.toLanguage
+    }
+    
     let configPrefix = "org.leo.dictionary.config.entity.ParseWords"
     var parseConfig = ParseConfig()
     var words: [Word] = []
@@ -212,6 +241,7 @@ class FileWordProvider: WordProvider{
         return words
     }
     func parseWords(){
+        NSLog("parseWords started " + fileName)
         let lines = readString(fileName: fileName).split(separator: "\r\n")
         words.removeAll()
         var topics: [Topic] = []
@@ -252,8 +282,8 @@ class FileWordProvider: WordProvider{
                 }
             }
         }
+        NSLog("parseWords ended " + fileName)
     }
-    // let configPrefix = "org.leo.dictionary.config.entity.ParseWords:de:en; uk:die+; das+; der+:%5C%7C:%3B:%3B:%5Ct:"
     func replaceRegexSymbols(_ a: String) -> String {
         return a.replacingOccurrences(of: "\\\\", with: "\\", options: .regularExpression, range: nil)
     }
@@ -272,14 +302,18 @@ class FileWordProvider: WordProvider{
             parseConfig.rootName = decode(string: String(parts[9]))
         }
     }
+    func topicRegex() -> String {
+        return "^("+parseConfig.topicFlag + parseConfig.topicDelimiter+")"
+    }
+    
     func isTopicLine(line:Substring) -> Bool {
-        return line.range(of: "^("+parseConfig.topicFlag + parseConfig.topicDelimiter+")+", options: .regularExpression) != nil
+        return line.range(of: topicRegex() + "+", options: .regularExpression) != nil
     }
     func parseTopic(line:Substring) -> Topic {
         var name = String(line)
         var level: Int32 = 1
         while isTopicLine(line: name.split(separator: "\r\n")[0]) {
-            name = name.replacingOccurrences(of: "^("+parseConfig.topicFlag + parseConfig.topicDelimiter+")", with:"", options: .regularExpression)
+            name = name.replacingOccurrences(of: topicRegex(), with:"", options: .regularExpression)
             level += 1
         }
         let topic = Topic(name: name, language: parseConfig.fromLanguage, level: level)

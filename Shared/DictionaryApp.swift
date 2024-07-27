@@ -19,9 +19,9 @@ struct dictionaryApp: App {
         WindowGroup {
             ContentView()
         }
-//        Settings {
-//            SettingsView()
-//        }
+        //        Settings {
+        //            SettingsView()
+        //        }
     }
     
 }
