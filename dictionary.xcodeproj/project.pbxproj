@@ -18,6 +18,8 @@
 		D517EE3D2C55191900977726 /* DatabaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D517EE3C2C55191900977726 /* DatabaseView.swift */; };
 		D517EE3E2C55191900977726 /* DatabaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D517EE3C2C55191900977726 /* DatabaseView.swift */; };
 		D54112DE2C2ACDFF002BC1C6 /* German_most_used.txt in Resources */ = {isa = PBXBuildFile; fileRef = D54112DD2C2ACDFF002BC1C6 /* German_most_used.txt */; };
+		D541F6BF2C55916300EE0BBB /* WordExporterImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D541F6BE2C55916300EE0BBB /* WordExporterImporter.swift */; };
+		D541F6C02C55916300EE0BBB /* WordExporterImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D541F6BE2C55916300EE0BBB /* WordExporterImporter.swift */; };
 		D55B78E22C5150150084000F /* WordMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B78E12C5150150084000F /* WordMatcher.swift */; };
 		D55B78E32C5150150084000F /* WordMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55B78E12C5150150084000F /* WordMatcher.swift */; };
 		D5707E5A2C3ADF520028879F /* WordModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5707E592C3ADF520028879F /* WordModels.swift */; };
@@ -71,6 +73,7 @@
 		D517EE392C55189A00977726 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		D517EE3C2C55191900977726 /* DatabaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseView.swift; sourceTree = "<group>"; };
 		D54112DD2C2ACDFF002BC1C6 /* German_most_used.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = German_most_used.txt; sourceTree = "<group>"; };
+		D541F6BE2C55916300EE0BBB /* WordExporterImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordExporterImporter.swift; sourceTree = "<group>"; };
 		D55B78E12C5150150084000F /* WordMatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordMatcher.swift; sourceTree = "<group>"; };
 		D5707E592C3ADF520028879F /* WordModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordModels.swift; sourceTree = "<group>"; };
 		D5707E5C2C3ADFAA0028879F /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -158,6 +161,7 @@
 				D55B78E12C5150150084000F /* WordMatcher.swift */,
 				D517EE392C55189A00977726 /* PlayerView.swift */,
 				D517EE3C2C55191900977726 /* DatabaseView.swift */,
+				D541F6BE2C55916300EE0BBB /* WordExporterImporter.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -373,6 +377,7 @@
 				D59D0A832C286C17002CEB8E /* ContentView.swift in Sources */,
 				D59D0A812C286C17002CEB8E /* DictionaryApp.swift in Sources */,
 				D50A41602C3602360075E14E /* FilterView.swift in Sources */,
+				D541F6BF2C55916300EE0BBB /* WordExporterImporter.swift in Sources */,
 				D5707E5D2C3ADFAA0028879F /* Player.swift in Sources */,
 				D583AAE32C2F45E3004E6034 /* DatabaseHelper.swift in Sources */,
 			);
@@ -394,6 +399,7 @@
 				D59D0A842C286C17002CEB8E /* ContentView.swift in Sources */,
 				D59D0A822C286C17002CEB8E /* DictionaryApp.swift in Sources */,
 				D50A41612C3602360075E14E /* FilterView.swift in Sources */,
+				D541F6C02C55916300EE0BBB /* WordExporterImporter.swift in Sources */,
 				D5707E5E2C3ADFAA0028879F /* Player.swift in Sources */,
 				D583AAE42C2F45E3004E6034 /* DatabaseHelper.swift in Sources */,
 			);

@@ -23,6 +23,4 @@ struct dictionaryApp: App {
         //            SettingsView()
         //        }
     }
-    
 }
-//https://github.com/Dougly/ViewsProgrammatically/blob/master/ViewsProgrammatically/ViewController.swift

@@ -365,9 +365,3 @@ class FileWordProvider: WordProvider{
         }
     }
 }
-func encode(string: String) -> String {
-    return string.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
-}
-func decode(string: String) -> String {
-    return string.removingPercentEncoding!.replacingOccurrences(of: "+", with: " ")
-}

@@ -33,9 +33,6 @@ class Player: NSObject, ObservableObject, AVSpeechSynthesizerDelegate{
     }
     func setupInit(){
         synthesizer.delegate = self
-        AVSpeechSynthesisVoice.speechVoices().forEach { voice in
-            print(voice)
-        }
     }
     
     func checkIndexLimits(index: Int) -> Int{
